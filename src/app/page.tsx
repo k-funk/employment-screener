@@ -153,7 +153,7 @@ export default function ResumePage() {
           <div className="w-24 h-1.5 cta-gradient rounded-full" />
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {/* Hazel Health */}
           <WorkExperience
             title="Staff Software Engineer << Senior Software Engineer"
