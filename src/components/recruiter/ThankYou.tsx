@@ -20,13 +20,13 @@ export default function ThankYou() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="bg-primary-container text-primary-fixed px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-transform inline-block"
+            className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-block"
           >
             View Resume
           </Link>
           <a
             href={`mailto:${EMAIL}`}
-            className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-transform inline-block"
+            className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all inline-block"
           >
             Email Directly
           </a>

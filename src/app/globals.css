@@ -73,7 +73,7 @@
 
     /* Nav (needs opacity so defined as rgba) */
     --color-nav-bg: rgba(247, 249, 251, 0.8);
-    --color-nav-btn-hover: rgba(242, 244, 246, 0.5);
+    --color-nav-btn-hover: rgba(209, 213, 219, 0.8);
   }
 
   .dark {
@@ -100,7 +100,7 @@
 
     /* Nav */
     --color-nav-bg: rgba(19, 27, 46, 0.8);
-    --color-nav-btn-hover: rgba(26, 35, 61, 0.5);
+    --color-nav-btn-hover: rgba(42, 54, 84, 0.9);
   }
 }
 
@@ -110,6 +110,18 @@
   }
   .cta-gradient {
     background: linear-gradient(135deg, #4edea3 0%, #00ad78 100%);
+    transition: filter 150ms ease;
+  }
+  .cta-gradient:hover {
+    filter: brightness(1.1);
+  }
+  .btn-filled {
+    background-color: var(--color-primary-container);
+    color: var(--color-primary-fixed);
+    transition: filter 150ms ease;
+  }
+  .btn-filled:hover {
+    filter: brightness(1.15);
   }
   .bg-nav {
     background-color: var(--color-nav-bg);

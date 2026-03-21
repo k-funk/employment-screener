@@ -32,7 +32,7 @@ export default function ResumePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/recruiter"
-                className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-transform inline-block"
+                className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all inline-block"
               >
                 Check for Fit
               </Link>
@@ -40,7 +40,7 @@ export default function ResumePage() {
                 href="/kfunk_resume_2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-container text-primary-fixed px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-transform inline-block"
+                className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-block"
               >
                 Download Resume (PDF)
               </a>
@@ -366,9 +366,9 @@ export default function ResumePage() {
       <section className="max-w-7xl mx-auto px-8 pb-16 text-center">
         <Link
           href="/recruiter"
-          className="cta-gradient text-tertiary px-10 py-5 rounded-xl font-extrabold text-xl shadow-lg active:scale-95 transition-transform inline-block"
+          className="cta-gradient text-tertiary px-10 py-5 rounded-xl font-extrabold text-xl shadow-lg active:scale-95 transition-all inline-block"
         >
-          Check for Fit →
+          Check for Fit
         </Link>
       </section>
     </main>
