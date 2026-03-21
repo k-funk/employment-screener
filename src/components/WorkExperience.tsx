@@ -16,7 +16,7 @@ export default function WorkExperience({
 }: WorkExperienceProps) {
   return (
     <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant/10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h3 className="font-headline font-bold text-2xl text-foreground mb-1">{title}</h3>
           <p className="text-on-tertiary-container font-bold text-lg">{company}</p>
@@ -30,7 +30,7 @@ export default function WorkExperience({
           </span>
         </div>
       </div>
-      {children}
+      {children && <div className="mt-8">{children}</div>}
     </div>
   )
 }
