@@ -158,7 +158,8 @@ export default function ResumePage() {
           <WorkExperience
             title="Staff Software Engineer << Senior Software Engineer"
             company="Hazel Health"
-            years="2020 — PRESENT"
+            startYear={2020}
+            endYear={2026}
             location="Earth (Remote)"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-6">
@@ -223,7 +224,8 @@ export default function ResumePage() {
           <WorkExperience
             title="Senior Software Engineer/Supporting Designer"
             company="EasyPost"
-            years="2015 — 2020"
+            startYear={2015}
+            endYear={2020}
             location="San Francisco, CA"
           >
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-secondary leading-relaxed">
@@ -247,7 +249,8 @@ export default function ResumePage() {
           <WorkExperience
             title="Software Engineer << Web Developer << Designer << Courier"
             company="eBay"
-            years="2012 — 2014"
+            startYear={2012}
+            endYear={2014}
             location="San Francisco, CA"
           >
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-secondary leading-relaxed">
@@ -269,7 +272,8 @@ export default function ResumePage() {
           <WorkExperience
             title="Software Engineer (Intern)"
             company="OpenDNS"
-            years="2014"
+            startYear={2014}
+            endYear={2014}
             location="San Francisco, CA"
           >
             <ul className="text-secondary leading-relaxed">
@@ -285,19 +289,22 @@ export default function ResumePage() {
           <WorkExperience
             title="Photographer"
             company="Freelance"
-            years="2008 — 2013"
+            startYear={2008}
+            endYear={2013}
             location="San Francisco & Napa Valley, CA"
           />
           <WorkExperience
             title="Web/Graphic Designer"
             company="Freelance"
-            years="2011 — 2013"
+            startYear={2011}
+            endYear={2013}
             location="San Francisco & Napa Valley, CA"
           />
           <WorkExperience
             title="Airborne Battle Management Systems"
             company="US Air Force"
-            years="2004 — 2008"
+            startYear={2004}
+            endYear={2008}
             location="Various"
           />
         </div>

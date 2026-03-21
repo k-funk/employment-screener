@@ -3,17 +3,22 @@ import { PropsWithChildren } from 'react'
 type WorkExperienceProps = PropsWithChildren<{
   title: string
   company: string
-  years: string
+  startYear: number
+  endYear: number
   location: string
 }>
 
 export default function WorkExperience({
   title,
   company,
-  years,
+  startYear,
+  endYear,
   location,
   children,
 }: WorkExperienceProps) {
+  const duration = Math.max(1, endYear - startYear)
+  const yearRange = startYear === endYear ? `${startYear}` : `${startYear} — ${endYear}`
+
   return (
     <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -23,7 +28,10 @@ export default function WorkExperience({
         </div>
         <div className="flex flex-col items-end">
           <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
-            {years}
+            {yearRange}
+            <span className="ms-2 font-normal">
+              ({duration} {duration === 1 ? 'Year' : 'Years'})
+            </span>
           </span>
           <span className="text-xs text-secondary font-medium uppercase tracking-widest">
             {location}
