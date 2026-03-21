@@ -182,7 +182,7 @@ export default function ResumePage() {
                   },
                 ].map(({ label, text }) => (
                   <li key={label} className="flex gap-3">
-                    <span className="text-emerald-500 font-bold mt-1">•</span>
+                    <span className="text-emerald-500 font-bold">•</span>
                     <div>
                       <strong className="text-foreground">{label}:</strong> {text}
                     </div>
@@ -209,7 +209,7 @@ export default function ResumePage() {
                   },
                 ].map(({ label, text }) => (
                   <li key={label} className="flex gap-3">
-                    <span className="text-emerald-500 font-bold mt-1">•</span>
+                    <span className="text-emerald-500 font-bold">•</span>
                     <div>
                       <strong className="text-foreground">{label}:</strong> {text}
                     </div>
@@ -236,7 +236,7 @@ export default function ResumePage() {
                 'Managed style, content, and UX for all marketing, API docs, and knowledgebase pages for 4+ years.',
               ].map((text) => (
                 <li key={text} className="flex gap-3">
-                  <span className="text-emerald-500 font-bold mt-1">•</span>
+                  <span className="text-emerald-500 font-bold">•</span>
                   {text}
                 </li>
               ))}
@@ -258,7 +258,7 @@ export default function ResumePage() {
                 'Created an internal dashboard for operations team. Stack: python, flask, psql, jQuery, bootstrap.',
               ].map((text) => (
                 <li key={text} className="flex gap-3">
-                  <span className="text-emerald-500 font-bold mt-1">•</span>
+                  <span className="text-emerald-500 font-bold">•</span>
                   {text}
                 </li>
               ))}
@@ -274,7 +274,7 @@ export default function ResumePage() {
           >
             <ul className="text-secondary leading-relaxed">
               <li className="flex gap-3">
-                <span className="text-emerald-500 font-bold mt-1">•</span>
+                <span className="text-emerald-500 font-bold">•</span>
                 Designed and built an open-source public API for accessing domain info over
                 TCP/HTTPS instead of UDP.
               </li>
