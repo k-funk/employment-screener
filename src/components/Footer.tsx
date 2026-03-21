@@ -1,3 +1,5 @@
+import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
+
 export default function Footer() {
   return (
     <footer className="bg-surface dark:bg-[#131b2e] border-t border-[#c6c5d4]/20 w-full mt-auto">
@@ -7,7 +9,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-8 font-headline font-bold text-xs tracking-wide uppercase">
           <a
-            href="https://www.linkedin.com/in/k-funk/"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
@@ -15,7 +17,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/k-funk"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
@@ -23,7 +25,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="mailto:kevincfunk@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
           >
             Email

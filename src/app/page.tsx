@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { GITHUB_URL, EMAIL } from '@/lib/contact'
 
 export default function ResumePage() {
   return (
@@ -58,14 +59,14 @@ export default function ResumePage() {
               </h4>
               <div className="space-y-3">
                 <a
-                  href="mailto:kevincfunk@gmail.com"
+                  href={`mailto:${EMAIL}`}
                   className="flex items-center gap-3 text-secondary hover:text-on-tertiary-container transition-colors"
                 >
                   <span className="material-symbols-outlined text-sm">mail</span>
-                  kevincfunk@gmail.com
+                  {EMAIL}
                 </a>
                 <a
-                  href="https://github.com/k-funk"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-secondary hover:text-on-tertiary-container transition-colors"

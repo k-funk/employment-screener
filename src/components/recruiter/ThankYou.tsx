@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { EMAIL } from '@/lib/contact'
 
 export default function ThankYou() {
   return (
@@ -24,7 +25,7 @@ export default function ThankYou() {
             View Resume
           </Link>
           <a
-            href="mailto:kevincfunk@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-transform inline-block"
           >
             Email Directly
