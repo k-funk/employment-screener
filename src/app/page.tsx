@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
 import LinkedInIcon from '@/components/icons/LinkedInIcon'
+import WorkExperience from '@/components/WorkExperience'
 
 export default function ResumePage() {
   return (
@@ -154,23 +155,12 @@ export default function ResumePage() {
 
         <div className="space-y-12">
           {/* Hazel Health */}
-          <div className="bg-surface-container-lowest p-8 md:p-10 rounded-3xl ambient-shadow border border-white/50 group">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-              <div>
-                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
-                  Staff Software Engineer &lt;&lt; Senior Software Engineer
-                </h3>
-                <p className="text-on-tertiary-container font-bold text-lg">Hazel Health</p>
-              </div>
-              <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
-                  2020 — PRESENT
-                </span>
-                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
-                  Earth (Remote)
-                </span>
-              </div>
-            </div>
+          <WorkExperience
+            title="Staff Software Engineer << Senior Software Engineer"
+            company="Hazel Health"
+            years="2020 — PRESENT"
+            location="Earth (Remote)"
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-6">
               <ul className="space-y-4 text-secondary leading-relaxed">
                 {[
@@ -227,26 +217,15 @@ export default function ResumePage() {
                 ))}
               </ul>
             </div>
-          </div>
+          </WorkExperience>
 
           {/* EasyPost */}
-          <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-              <div>
-                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
-                  Senior Software Engineer/Supporting Designer
-                </h3>
-                <p className="text-on-tertiary-container font-bold text-lg">EasyPost</p>
-              </div>
-              <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
-                  2015 — 2020
-                </span>
-                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
-                  San Francisco, CA
-                </span>
-              </div>
-            </div>
+          <WorkExperience
+            title="Senior Software Engineer/Supporting Designer"
+            company="EasyPost"
+            years="2015 — 2020"
+            location="San Francisco, CA"
+          >
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-secondary leading-relaxed">
               {[
                 'Spearheaded company growth from 12 to 300+ employees, contributing to various transformations.',
@@ -262,26 +241,15 @@ export default function ResumePage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </WorkExperience>
 
           {/* eBay */}
-          <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-              <div>
-                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
-                  Software Engineer &lt;&lt; Web Developer &lt;&lt; Designer &lt;&lt; Courier
-                </h3>
-                <p className="text-on-tertiary-container font-bold text-lg">eBay</p>
-              </div>
-              <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
-                  2012 — 2014
-                </span>
-                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
-                  San Francisco, CA
-                </span>
-              </div>
-            </div>
+          <WorkExperience
+            title="Software Engineer << Web Developer << Designer << Courier"
+            company="eBay"
+            years="2012 — 2014"
+            location="San Francisco, CA"
+          >
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-secondary leading-relaxed">
               {[
                 'Within two years, climbed the ranks from delivery driver, to web designer, to software engineer.',
@@ -295,26 +263,15 @@ export default function ResumePage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </WorkExperience>
 
           {/* OpenDNS */}
-          <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-              <div>
-                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
-                  Software Engineer (Intern)
-                </h3>
-                <p className="text-on-tertiary-container font-bold text-lg">OpenDNS</p>
-              </div>
-              <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
-                  2014
-                </span>
-                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
-                  San Francisco, CA
-                </span>
-              </div>
-            </div>
+          <WorkExperience
+            title="Software Engineer (Intern)"
+            company="OpenDNS"
+            years="2014"
+            location="San Francisco, CA"
+          >
             <ul className="text-secondary leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-emerald-500 font-bold mt-1">•</span>
@@ -322,49 +279,27 @@ export default function ResumePage() {
                 TCP/HTTPS instead of UDP.
               </li>
             </ul>
-          </div>
+          </WorkExperience>
 
           {/* Earlier roles */}
-          {[
-            {
-              title: 'Photographer',
-              org: 'Freelance',
-              years: '2008 — 2013',
-              location: 'San Francisco & Napa Valley, CA',
-            },
-            {
-              title: 'Web/Graphic Designer',
-              org: 'Freelance',
-              years: '2011 — 2013',
-              location: 'San Francisco & Napa Valley, CA',
-            },
-            {
-              title: 'Airborne Battle Management Systems',
-              org: 'US Air Force',
-              years: '2004 — 2008',
-              location: 'Various',
-            },
-          ].map(({ title, org, years, location }) => (
-            <div
-              key={title}
-              className="bg-surface-container-low px-8 py-6 rounded-3xl border border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-            >
-              <div>
-                <h3 className="font-headline font-bold text-xl text-foreground">
-                  {title}
-                </h3>
-                <p className="text-on-tertiary-container font-bold">{org}</p>
-              </div>
-              <div className="flex flex-col items-start md:items-end gap-1">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
-                  {years}
-                </span>
-                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
-                  {location}
-                </span>
-              </div>
-            </div>
-          ))}
+          <WorkExperience
+            title="Photographer"
+            company="Freelance"
+            years="2008 — 2013"
+            location="San Francisco & Napa Valley, CA"
+          />
+          <WorkExperience
+            title="Web/Graphic Designer"
+            company="Freelance"
+            years="2011 — 2013"
+            location="San Francisco & Napa Valley, CA"
+          />
+          <WorkExperience
+            title="Airborne Battle Management Systems"
+            company="US Air Force"
+            years="2004 — 2008"
+            location="Various"
+          />
         </div>
       </section>
 
