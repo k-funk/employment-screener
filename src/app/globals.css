@@ -92,6 +92,9 @@
     --color-surface-container-highest: #2a3654;
     --color-surface-selected: #222d4a;
 
+    /* Secondary container text lightens in dark for readability */
+    --color-on-secondary-container: var(--color-secondary);
+
     /* Tertiary accent brightens in dark */
     --color-on-tertiary-container: #4edea3;
 

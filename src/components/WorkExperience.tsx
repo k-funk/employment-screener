@@ -15,7 +15,7 @@ export default function WorkExperience({
   children,
 }: WorkExperienceProps) {
   return (
-    <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+    <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h3 className="font-headline font-bold text-2xl text-foreground mb-1">{title}</h3>
