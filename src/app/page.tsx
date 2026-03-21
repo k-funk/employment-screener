@@ -48,7 +48,7 @@ export default function ResumePage() {
                 rel="noopener noreferrer"
                 className="bg-primary-container text-primary-fixed px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-transform inline-block"
               >
-                Download CV
+                Download Resume (PDF)
               </a>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function ResumePage() {
                 <p className="text-on-tertiary-container font-bold text-lg">Hazel Health</p>
               </div>
               <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-1">
+                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
                   2020 — PRESENT
                 </span>
                 <span className="text-xs text-secondary font-medium uppercase tracking-widest">
@@ -250,7 +250,7 @@ export default function ResumePage() {
                 <p className="text-on-tertiary-container font-bold text-lg">EasyPost</p>
               </div>
               <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-1">
+                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
                   2015 — 2020
                 </span>
                 <span className="text-xs text-secondary font-medium uppercase tracking-widest">
@@ -275,73 +275,107 @@ export default function ResumePage() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* eBay */}
-            <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 rounded-3xl border border-outline-variant/10">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <h3 className="font-headline font-bold text-xl text-primary dark:text-[#f7f9fb] mb-1">
-                    Software Engineer &lt;&lt; Web Developer &lt;&lt; Designer &lt;&lt; Courier
-                  </h3>
-                  <p className="text-on-tertiary-container font-bold">eBay</p>
-                </div>
+          {/* eBay */}
+          <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+              <div>
+                <h3 className="font-headline font-bold text-2xl text-primary dark:text-[#f7f9fb] mb-1">
+                  Software Engineer &lt;&lt; Web Developer &lt;&lt; Designer &lt;&lt; Courier
+                </h3>
+                <p className="text-on-tertiary-container font-bold text-lg">eBay</p>
               </div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xs font-bold text-on-secondary-container bg-secondary-container px-3 py-1 rounded-full">
+              <div className="flex flex-col items-end">
+                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
                   2012 — 2014
                 </span>
-                <span className="text-[10px] text-secondary font-medium uppercase tracking-wider">
+                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
                   San Francisco, CA
                 </span>
               </div>
-              <ul className="space-y-3 text-secondary text-sm leading-relaxed">
-                {[
-                  'Within two years, climbed the ranks from delivery driver, to web designer, to software engineer.',
-                  'Developed a RESTful web API to enable small and medium businesses to manage orders.',
-                  'Built an AngularJS/Bootstrap web app to provide an interface to the API.',
-                  'Created an internal dashboard for operations team. Stack: python, flask, psql, jQuery, bootstrap.',
-                ].map((text) => (
-                  <li key={text} className="flex gap-3">
-                    <span className="text-emerald-500 font-bold">•</span> {text}
-                  </li>
-                ))}
-              </ul>
             </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-secondary leading-relaxed">
+              {[
+                'Within two years, climbed the ranks from delivery driver, to web designer, to software engineer.',
+                'Developed a RESTful web API to enable small and medium businesses to manage orders.',
+                'Built an AngularJS/Bootstrap web app to provide an interface to the API.',
+                'Created an internal dashboard for operations team. Stack: python, flask, psql, jQuery, bootstrap.',
+              ].map((text) => (
+                <li key={text} className="flex gap-3">
+                  <span className="text-emerald-500 font-bold mt-1">•</span>
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* OpenDNS & Others */}
-            <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 rounded-3xl border border-outline-variant/10">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="font-headline font-bold text-xl text-primary dark:text-[#f7f9fb] mb-1">
-                    Software Engineer (Intern)
-                  </h3>
-                  <p className="text-on-tertiary-container font-bold">OpenDNS</p>
-                </div>
-                <span className="text-xs font-bold text-on-secondary-container bg-secondary-container px-3 py-1 rounded-full">
+          {/* OpenDNS */}
+          <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+              <div>
+                <h3 className="font-headline font-bold text-2xl text-primary dark:text-[#f7f9fb] mb-1">
+                  Software Engineer (Intern)
+                </h3>
+                <p className="text-on-tertiary-container font-bold text-lg">OpenDNS</p>
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
                   2014
                 </span>
-              </div>
-              <p className="text-secondary text-sm mb-8 leading-relaxed">
-                Designed and built an open-source public API for accessing domain info over
-                TCP/HTTPS instead of UDP.
-              </p>
-              <div className="space-y-3 pt-4 border-t border-outline-variant/20">
-                {[
-                  { title: 'Photographer – Freelance', years: '2008 — 2013' },
-                  { title: 'Web/Graphic Designer – Freelance', years: '2011 — 2013' },
-                  {
-                    title: 'Airborne Battle Management Systems – US Air Force',
-                    years: '2004 — 2008',
-                  },
-                ].map(({ title, years }) => (
-                  <div key={title} className="flex justify-between items-center text-sm">
-                    <span className="font-bold text-primary dark:text-[#f7f9fb]">{title}</span>
-                    <span className="text-secondary">{years}</span>
-                  </div>
-                ))}
+                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
+                  San Francisco, CA
+                </span>
               </div>
             </div>
+            <ul className="text-secondary leading-relaxed">
+              <li className="flex gap-3">
+                <span className="text-emerald-500 font-bold mt-1">•</span>
+                Designed and built an open-source public API for accessing domain info over
+                TCP/HTTPS instead of UDP.
+              </li>
+            </ul>
           </div>
+
+          {/* Earlier roles */}
+          {[
+            {
+              title: 'Photographer',
+              org: 'Freelance',
+              years: '2008 — 2013',
+              location: 'San Francisco & Napa Valley, CA',
+            },
+            {
+              title: 'Web/Graphic Designer',
+              org: 'Freelance',
+              years: '2011 — 2013',
+              location: 'San Francisco & Napa Valley, CA',
+            },
+            {
+              title: 'Airborne Battle Management Systems',
+              org: 'US Air Force',
+              years: '2004 — 2008',
+              location: 'Various',
+            },
+          ].map(({ title, org, years, location }) => (
+            <div
+              key={title}
+              className="bg-surface-container-low dark:bg-[#1a233d] px-8 py-6 rounded-3xl border border-outline-variant/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+            >
+              <div>
+                <h3 className="font-headline font-bold text-xl text-primary dark:text-[#f7f9fb]">
+                  {title}
+                </h3>
+                <p className="text-on-tertiary-container font-bold">{org}</p>
+              </div>
+              <div className="flex flex-col items-start md:items-end gap-1">
+                <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
+                  {years}
+                </span>
+                <span className="text-xs text-secondary font-medium uppercase tracking-widest">
+                  {location}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
