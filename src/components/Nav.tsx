@@ -17,10 +17,10 @@ export default function Nav() {
     setDark(next)
     if (next) {
       document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
+      document.cookie = 'theme=dark; path=/; max-age=31536000; SameSite=Lax'
     } else {
       document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
+      document.cookie = 'theme=light; path=/; max-age=31536000; SameSite=Lax'
     }
   }
 

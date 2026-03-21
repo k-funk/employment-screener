@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Manrope } from 'next/font/google'
+import { cookies } from 'next/headers'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -22,18 +23,19 @@ export const metadata: Metadata = {
     'Portfolio and recruiter intake for Kevin Funk, Senior Software Engineer with 13 years of experience.',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieStore = await cookies()
+  const isDark = cookieStore.get('theme')?.value === 'dark'
+
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${manrope.variable}${isDark ? ' dark' : ''}`}
+    >
       <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})()`,
-          }}
         />
       </head>
       <body className="bg-surface dark:bg-[#131b2e] text-on-surface dark:text-[#f7f9fb] font-body min-h-screen flex flex-col selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
