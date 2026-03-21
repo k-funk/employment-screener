@@ -63,7 +63,7 @@ export default function Nav() {
         <button
           onClick={toggleDark}
           aria-label="Toggle dark mode"
-          className="p-2 text-foreground nav-btn-hover rounded-lg transition-all active:scale-95 duration-150 ease-in-out"
+          className="w-10 h-10 flex items-center justify-center text-foreground nav-btn-hover rounded-lg transition-all active:scale-95 duration-150 ease-in-out"
         >
           <span className="material-symbols-outlined">dark_mode</span>
         </button>
