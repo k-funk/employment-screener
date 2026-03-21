@@ -116,7 +116,7 @@ export default function RecruiterPage() {
             <h1 className="text-5xl md:text-6xl font-extrabold font-headline tracking-tight text-primary dark:text-[#f7f9fb] leading-[1.1] mb-6">
               Let&apos;s see if we&apos;re a great fit.
             </h1>
-            <p className="text-lg text-on-surface-variant dark:text-[#c6c5d4] leading-relaxed max-w-2xl">
+            <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
               Tailoring this experience starts with understanding your goals. Providing these details
               helps curate the most relevant case studies and metrics for your review.
             </p>

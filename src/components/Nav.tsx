@@ -43,7 +43,7 @@ export default function Nav() {
             className={
               isResume
                 ? 'text-[#00ad78] dark:text-[#4edea3] font-bold border-b-2 border-[#00ad78] pb-1 transition-colors'
-                : 'text-[#57657b] dark:text-[#c6c5d4] hover:text-[#131b2e] dark:hover:text-[#f7f9fb] transition-colors active:scale-95 duration-150 ease-in-out'
+                : 'text-[#57657b] hover:text-[#131b2e] dark:hover:text-[#f7f9fb] transition-colors active:scale-95 duration-150 ease-in-out'
             }
           >
             Resume
@@ -53,7 +53,7 @@ export default function Nav() {
             className={
               isRecruiter
                 ? 'text-[#00ad78] dark:text-[#4edea3] font-bold border-b-2 border-[#00ad78] pb-1 transition-colors'
-                : 'text-[#57657b] dark:text-[#c6c5d4] hover:text-[#131b2e] dark:hover:text-[#f7f9fb] transition-colors active:scale-95 duration-150 ease-in-out'
+                : 'text-[#57657b] hover:text-[#131b2e] dark:hover:text-[#f7f9fb] transition-colors active:scale-95 duration-150 ease-in-out'
             }
           >
             Recruiters

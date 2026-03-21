@@ -13,7 +13,7 @@ export default function ThankYou() {
         <h1 className="font-headline font-extrabold text-4xl md:text-5xl text-primary dark:text-[#f7f9fb] tracking-tight mb-4">
           You&apos;re all set!
         </h1>
-        <p className="text-lg text-secondary dark:text-[#c6c5d4] leading-relaxed mb-8">
+        <p className="text-lg text-secondary leading-relaxed mb-8">
           Thank you for taking the time to share your opportunity. I&apos;ll review your submission
           and follow up if there&apos;s a strong match. Looking forward to connecting!
         </p>
