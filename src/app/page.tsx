@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { GITHUB_URL, EMAIL } from '@/lib/contact'
+import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
+import LinkedInIcon from '@/components/icons/LinkedInIcon'
 
 export default function ResumePage() {
   return (
@@ -73,6 +74,15 @@ export default function ResumePage() {
                 >
                   <span className="material-symbols-outlined text-sm">code</span>
                   github.com/k-funk
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-secondary hover:text-on-tertiary-container transition-colors"
+                >
+                  <LinkedInIcon className="w-6 h-6 shrink-0" />
+                  linkedin.com/in/k-funk
                 </a>
               </div>
             </div>

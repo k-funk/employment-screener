@@ -1,4 +1,5 @@
 import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
+import LinkedInIcon from '@/components/icons/LinkedInIcon'
 
 export default function Footer() {
   return (
@@ -9,26 +10,29 @@ export default function Footer() {
         </div>
         <div className="flex gap-8 font-headline font-bold text-xs tracking-wide uppercase">
           <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
+            href={`mailto:${EMAIL}`}
+            className="flex items-center gap-2 text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
           >
-            LinkedIn
+            <span className="material-symbols-outlined text-base">mail</span>
+            Email
           </a>
           <a
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
+            className="flex items-center gap-2 text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
           >
+            <span className="material-symbols-outlined text-base">code</span>
             GitHub
           </a>
           <a
-            href={`mailto:${EMAIL}`}
-            className="text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-secondary dark:text-[#c6c5d4] hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
           >
-            Email
+            <LinkedInIcon className="w-4 h-4 shrink-0" />
+            LinkedIn
           </a>
         </div>
       </div>
