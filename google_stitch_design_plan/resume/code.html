@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kevin Funk - Senior Software Engineer Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#f7f9fb",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#57657b",
+              "error-container": "#ffdad6",
+              "primary-container": "#282f44",
+              "secondary-container": "#d5e3fd",
+              "surface-container": "#eceef0",
+              "surface-tint": "#565e74",
+              "tertiary": "#002113",
+              "on-tertiary-container": "#00ad78",
+              "on-error-container": "#93000a",
+              "background": "#f7f9fb",
+              "surface-dim": "#d8dadc",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-primary-fixed": "#131b2e",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#4edea3",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#002113",
+              "tertiary-fixed": "#6ffbbe",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#dae2fd",
+              "on-secondary-fixed-variant": "#3a485c",
+              "secondary-fixed": "#d5e3fd",
+              "outline-variant": "#c6c5d4",
+              "error": "#ba1a1a",
+              "secondary": "#515f74",
+              "primary": "#131b2e",
+              "surface-container-highest": "#e0e3e5",
+              "on-surface-variant": "#454652",
+              "on-tertiary-fixed-variant": "#005236",
+              "on-error": "#ffffff",
+              "on-background": "#191c1e",
+              "surface-container-high": "#e6e8ea",
+              "on-surface": "#191c1e",
+              "primary-fixed-dim": "#bec6e0",
+              "on-secondary-fixed": "#0d1c2f",
+              "surface-bright": "#f7f9fb",
+              "tertiary-container": "#003824",
+              "inverse-on-surface": "#eff1f3",
+              "inverse-primary": "#bec6e0",
+              "on-primary-container": "#8f97b0",
+              "inverse-surface": "#2d3133",
+              "outline": "#767683",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#b9c7e0",
+              "surface-variant": "#e0e3e5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        backdrop-filter: blur(12px);
+      }
+      .ambient-shadow {
+        box-shadow: 0 20px 40px rgba(19, 27, 46, 0.06);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #4edea3 0%, #00ad78 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Updated Top Navigation Bar using COMPONENTS_23 -->
+<nav class="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 dark:bg-[#131b2e]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(19,27,46,0.06)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-[#131b2e] dark:text-[#f7f9fb] font-headline">
+            Kevin Funk
+        </div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-bold tracking-tight">
+<a class="text-[#00ad78] dark:text-[#4edea3] font-bold border-b-2 border-[#00ad78] pb-1 active:scale-95 duration-150 ease-in-out" href="#">Resume</a>
+<a class="text-[#57657b] dark:text-[#c6c5d4] hover:text-[#131b2e] dark:hover:text-[#f7f9fb] transition-colors active:scale-95 duration-150 ease-in-out" href="#">Recruiters</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-[#131b2e] dark:text-[#f7f9fb] hover:bg-[#f2f4f6]/50 dark:hover:bg-[#1a233d]/50 rounded-lg transition-all active:scale-95 duration-150 ease-in-out" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="md:hidden p-2 text-[#131b2e] dark:text-[#f7f9fb] hover:bg-[#f2f4f6]/50 dark:hover:bg-[#1a233d]/50 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-16">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-12 md:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+                        Available for Senior Roles
+                    </div>
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl lg:text-8xl text-primary tracking-tighter leading-tight mb-8">
+                        Kevin Funk
+                    </h1>
+<h2 class="text-2xl md:text-3xl font-bold text-on-tertiary-container mb-6">Senior Software Engineer</h2>
+<div class="flex flex-col gap-4 text-secondary mb-10">
+<p class="text-xl md:text-2xl leading-relaxed">
+                            Frontend-leaning Full-Stack Engineer with 13 years of experience building scalable web applications. Proven track record of navigating hyper-growth, including scaling engineering teams from 10 to 40 members and facilitating 30x increases in clinical volume. Specialized in modernizing legacy monoliths into independent services to accelerate release cycles and eliminate deployment bottlenecks.
+                        </p>
+<p class="text-lg font-medium">Remote positions only. <span class="text-on-surface-variant font-normal">I also love meeting my teammates in-person, so I'm more than happy to fly to meet up.</span></p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="primary-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-transform">
+                            Check for Fit
+                        </button>
+<button class="bg-primary-container text-primary-fixed px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-transform">
+                            Download CV
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-4 pt-12">
+<div class="bg-white p-6 rounded-2xl border border-surface-container-highest shadow-sm">
+<h4 class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">Contact &amp; Socials</h4>
+<div class="space-y-3">
+<a class="flex items-center gap-3 text-secondary hover:text-emerald-600 transition-colors" href="mailto:kevincfunk@gmail.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+                                kevincfunk@gmail.com
+                            </a>
+<a class="flex items-center gap-3 text-secondary hover:text-emerald-600 transition-colors" href="https://github.com/k-funk">
+<span class="material-symbols-outlined text-sm">code</span>
+                                github.com/k-funk
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Mastery Section -->
+<section class="bg-primary text-white py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div>
+<h2 class="font-headline font-extrabold text-4xl mb-4 text-surface-bright">Technical Mastery</h2>
+<p class="text-primary-fixed-dim text-lg max-w-md">A comprehensive toolkit spanning modern frontend architectures to robust backend services.</p>
+</div>
+<div class="flex gap-2">
+<span class="w-12 h-1 bg-tertiary-fixed rounded-full"></span>
+<span class="w-4 h-1 bg-tertiary-fixed-dim rounded-full"></span>
+<span class="w-2 h-1 bg-on-primary-fixed-variant rounded-full"></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Primary Skills -->
+<div class="space-y-6">
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-tertiary-fixed font-bold">Primary Tech Skills</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-xl font-bold">TypeScript</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">NodeJS</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Vite/Webpack</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">React</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Redux</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">NextJS</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">ExpressJS</span>
+<span class="px-4 py-2 bg-primary-container text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Basic PSQL</span>
+</div>
+</div>
+<!-- Additional Skills -->
+<div class="space-y-6">
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-tertiary-fixed-dim font-bold">Additional Tech Skills</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">AngularJS</span>
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">SCSS</span>
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Bootstrap</span>
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Jekyll</span>
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Python</span>
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Django</span>
+<span class="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10">Flask</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Experience Section -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+<div class="mb-16">
+<h2 class="font-headline font-extrabold text-4xl text-primary mb-4">Work Experience</h2>
+<div class="w-24 h-1.5 primary-gradient rounded-full"></div>
+</div>
+<div class="space-y-12">
+<!-- Hazel Health -->
+<div class="bg-surface-container-lowest p-8 md:p-10 rounded-3xl ambient-shadow border border-white/50 group">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<div>
+<h3 class="font-headline font-bold text-2xl text-primary mb-1">Staff Software Engineer &lt;&lt; Senior Software Engineer</h3>
+<p class="text-on-tertiary-container font-bold text-lg">Hazel Health</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-1">2020 — PRESENT</span>
+<span class="text-xs text-secondary font-medium uppercase tracking-widest">Earth (Remote)</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-6">
+<ul class="space-y-4 text-secondary leading-relaxed">
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Scale &amp; Growth:</strong> Orchestrated the expansion of the engineering team from 10 to 40 members and company growth from ~50 to ~350 employees.</div>
+</li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Talent Acquisition:</strong> Personally designed front-end interview challenges to ensure technical competency and high hiring standards during rapid growth phases.</div>
+</li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Technical Leadership:</strong> Guided a cross-functional team of 9 teammates as the Technical Lead, orchestrating technical strategies, adding domain knowledge, and providing mentorship.</div>
+</li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Clinical Impact:</strong> Expanded B2B footprint from 56k to 426k partner school districts, driving a 30x increase in clinical visits.</div>
+</li>
+</ul>
+<ul class="space-y-4 text-secondary leading-relaxed">
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Quality &amp; Efficiency:</strong> Architected and implemented an org-wide bug triage process, managed web-client deployments, and scaled team capacity.</div>
+</li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Revenue Generation:</strong> Developed numerous internal and customer-facing tools that increased mental health visits 3x.</div>
+</li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Architecture Modernization:</strong> Decoupled a mission-critical monolith into independent web services, eliminating deployment bottlenecks.</div>
+</li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+<div><strong class="text-primary">Development:</strong> Developed a suite of web applications for diverse users—patients, medical providers, and school admins.</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- EasyPost -->
+<div class="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<div>
+<h3 class="font-headline font-bold text-2xl text-primary mb-1">Senior Software Engineer/Supporting Designer</h3>
+<p class="text-on-tertiary-container font-bold text-lg">EasyPost</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-1">2015 — 2020</span>
+<span class="text-xs text-secondary font-medium uppercase tracking-widest">San Francisco, CA</span>
+</div>
+</div>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-secondary leading-relaxed">
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+                            Spearheaded company growth from 12 to 300+ employees, contributing to various transformations.
+                        </li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+                            Led the development and management of front-end services, meeting the needs of 350k+ daily visitors.
+                        </li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+                            Worked with many teams on API design to meet both backend and frontend integration needs.
+                        </li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+                            Managed an internal npm package, providing SCSS styles, assets, and reusable React components.
+                        </li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+                            Incrementally refactored ES5 backbone.js app to an ES2018 react/redux-saga app.
+                        </li>
+<li class="flex gap-3">
+<span class="text-emerald-500 font-bold mt-1">•</span>
+                            Managed style, content, and UX for all marketing, API docs, and knowledgebase pages for 4+ years.
+                        </li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- eBay -->
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary mb-1">Software Engineer &lt;&lt; Web Developer &lt;&lt; Designer &lt;&lt; Courier</h3>
+<p class="text-on-tertiary-container font-bold">eBay</p>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs font-bold text-on-secondary-container bg-secondary-container px-3 py-1 rounded-full">2012 — 2014</span>
+<span class="text-[10px] text-secondary font-medium uppercase tracking-wider">San Francisco, CA</span>
+</div>
+<ul class="space-y-3 text-secondary text-sm leading-relaxed">
+<li class="flex gap-3"><span class="text-emerald-500 font-bold">•</span> Within two years, climbed the ranks from delivery driver, to web designer, to software engineer.</li>
+<li class="flex gap-3"><span class="text-emerald-500 font-bold">•</span> Developed a RESTful web API to enable small and medium businesses to manage orders.</li>
+<li class="flex gap-3"><span class="text-emerald-500 font-bold">•</span> Built an AngularJS/Bootstrap web app to provide an interface to the API.</li>
+<li class="flex gap-3"><span class="text-emerald-500 font-bold">•</span> Created an internal dashboard for operations team. Stack: python, flask, psql, jQuery, bootstrap.</li>
+</ul>
+</div>
+<!-- OpenDNS & Others -->
+<div class="space-y-6">
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10 h-full">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary mb-1">Software Engineer (Intern)</h3>
+<p class="text-on-tertiary-container font-bold">OpenDNS</p>
+</div>
+<span class="text-xs font-bold text-on-secondary-container bg-secondary-container px-3 py-1 rounded-full">2014</span>
+</div>
+<p class="text-secondary text-sm mb-8 leading-relaxed">Designed and built an open-source public API for accessing domain info over TCP/HTTPS instead of UDP.</p>
+<div class="space-y-3 pt-4 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-sm">
+<span class="font-bold text-primary">Photographer – Freelance</span>
+<span class="text-secondary">2008 — 2013</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="font-bold text-primary">Web/Graphic Designer – Freelance</span>
+<span class="text-secondary">2011 — 2013</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="font-bold text-primary">Airborne Battle Management Systems – US Air Force</span>
+<span class="text-secondary">2004 — 2008</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="md:col-span-1">
+<h2 class="font-headline font-extrabold text-3xl text-primary mb-4">Education</h2>
+<p class="text-secondary">Academic foundations and professional certifications.</p>
+</div>
+<div class="md:col-span-2">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
+<div class="space-y-8">
+<div>
+<h4 class="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">Graduate</h4>
+<p class="font-bold text-primary text-lg">M.S., Computer Science/Web Science</p>
+<p class="text-secondary">Stanford University • 2018</p>
+<p class="text-xs text-on-surface-variant mt-1">Previous study: San Francisco, CA (2014)</p>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">Undergraduate</h4>
+<p class="font-bold text-primary text-lg">B.S., Visual Communication Design</p>
+<p class="text-secondary">San Francisco State University • 2011</p>
+</div>
+</div>
+<div class="space-y-8">
+<div>
+<h4 class="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">Certifications</h4>
+<p class="font-bold text-primary text-lg">LAMP Fundamentals Certificate</p>
+<p class="text-secondary">City College of San Francisco • 2013</p>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">Military</h4>
+<p class="font-bold text-primary text-lg">A.A.S., Air and Space Operations Technology</p>
+<p class="text-secondary">Community College of the Air Force • 2008</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Updated Footer Section -->
+<footer class="bg-surface border-t border-surface-container-highest">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-10 max-w-7xl mx-auto gap-6">
+<div class="text-secondary font-headline font-bold text-sm tracking-tight">
+            © 2024 Kevin Funk
+        </div>
+<div class="flex items-center gap-8 font-['Manrope'] font-bold text-sm tracking-tight">
+<a class="text-secondary hover:text-on-tertiary-container transition-colors duration-200 active:scale-95" href="#">LinkedIn</a>
+<a class="text-secondary hover:text-on-tertiary-container transition-colors duration-200 active:scale-95" href="#">GitHub</a>
+<a class="text-secondary hover:text-on-tertiary-container transition-colors duration-200 active:scale-95" href="mailto:kevincfunk@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
