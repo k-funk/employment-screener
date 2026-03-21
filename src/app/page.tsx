@@ -27,13 +27,6 @@ export default function ResumePage() {
                 volume. Specialized in modernizing legacy monoliths into independent services to
                 accelerate release cycles and eliminate deployment bottlenecks.
               </p>
-              <p className="text-lg font-medium">
-                Remote positions only.{' '}
-                <span className="text-on-surface-variant font-normal">
-                  I also love meeting my teammates in-person, so I&apos;m more than happy to fly to
-                  meet up.
-                </span>
-              </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Link
