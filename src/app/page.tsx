@@ -120,11 +120,7 @@ export default function ResumePage() {
                   (skill, i) => (
                     <span
                       key={skill}
-                      className={`px-4 py-2 rounded-xl font-medium border border-outline-variant/10 ${
-                        i === 0
-                          ? 'bg-tertiary-fixed text-on-tertiary-fixed font-bold'
-                          : 'bg-primary-container text-primary-fixed'
-                      }`}
+                      className="px-4 py-2 rounded-xl font-medium border border-outline-variant/10 bg-primary-container text-primary-fixed"
                     >
                       {skill}
                     </span>
