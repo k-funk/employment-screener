@@ -74,9 +74,10 @@ function Hero() {
               href="/kfunk_resume_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-block"
+              className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-flex items-center gap-2"
             >
               Download Resume (PDF)
+              <span className="material-symbols-outlined text-xl">download</span>
             </a>
           </div>
         </div>
