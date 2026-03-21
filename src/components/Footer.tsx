@@ -3,7 +3,7 @@ import LinkedInIcon from '@/components/icons/LinkedInIcon'
 
 export default function Footer() {
   return (
-    <footer className="bg-surface dark:bg-[#131b2e] border-t border-[#c6c5d4]/20 w-full mt-auto">
+    <footer className="bg-surface border-t border-outline-variant/20 w-full mt-auto">
       <div className="flex flex-col md:flex-row justify-between items-center px-12 py-8 max-w-7xl mx-auto gap-6">
         <div className="font-headline font-bold text-xs tracking-wide uppercase text-secondary">
           © {new Date().getFullYear()} Kevin Funk

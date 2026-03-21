@@ -10,7 +10,7 @@ export default function ThankYou() {
             check_circle
           </span>
         </div>
-        <h1 className="font-headline font-extrabold text-4xl md:text-5xl text-primary dark:text-[#f7f9fb] tracking-tight mb-4">
+        <h1 className="font-headline font-extrabold text-4xl md:text-5xl text-foreground tracking-tight mb-4">
           You&apos;re all set!
         </h1>
         <p className="text-lg text-secondary leading-relaxed mb-8">

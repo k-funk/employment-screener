@@ -113,7 +113,7 @@ export default function RecruiterPage() {
       {isStep1 && (
         <header className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 w-full max-w-7xl">
           <div className="md:col-span-8">
-            <h1 className="text-5xl md:text-6xl font-extrabold font-headline tracking-tight text-primary dark:text-[#f7f9fb] leading-[1.1] mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold font-headline tracking-tight text-foreground leading-[1.1] mb-6">
               Let&apos;s see if we&apos;re a great fit.
             </h1>
             <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
@@ -151,7 +151,7 @@ export default function RecruiterPage() {
           className={`flex items-center gap-2 font-bold py-2 px-4 transition-colors ${
             step === 1
               ? 'text-outline cursor-not-allowed'
-              : 'text-primary dark:text-[#f7f9fb] hover:text-on-tertiary-container'
+              : 'text-foreground hover:text-on-tertiary-container'
           }`}
         >
           <span className="material-symbols-outlined">arrow_back</span>

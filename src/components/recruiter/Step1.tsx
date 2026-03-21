@@ -16,7 +16,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           </span>
         </div>
         <div className="md:col-span-9">
-          <label className="block text-2xl font-headline font-bold text-primary dark:text-[#f7f9fb] mb-4">
+          <label className="block text-2xl font-headline font-bold text-foreground mb-4">
             Great to meet you! Who are you representing today?
           </label>
           <input
@@ -24,7 +24,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             value={formData.companyName}
             onChange={(e) => onChange({ companyName: e.target.value })}
             placeholder="Company name"
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant dark:text-[#f7f9fb] dark:border-outline dark:placeholder:text-outline"
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
         </div>
       </div>
@@ -37,14 +37,14 @@ export default function Step1({ formData, onChange }: Step1Props) {
           </span>
         </div>
         <div className="md:col-span-9">
-          <label className="block text-2xl font-headline font-bold text-primary dark:text-[#f7f9fb] mb-4">
+          <label className="block text-2xl font-headline font-bold text-foreground mb-4">
             And what field are they making waves in?
           </label>
           <div className="relative">
             <select
               value={formData.industry}
               onChange={(e) => onChange({ industry: e.target.value })}
-              className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium appearance-none cursor-pointer transition-all dark:text-[#f7f9fb] dark:border-outline"
+              className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium appearance-none cursor-pointer transition-all"
             >
               <option value="" disabled>
                 Select industry
@@ -70,7 +70,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           </span>
         </div>
         <div className="md:col-span-9">
-          <label className="block text-2xl font-headline font-bold text-primary dark:text-[#f7f9fb] mb-8">
+          <label className="block text-2xl font-headline font-bold text-foreground mb-8">
             What structure are you looking to explore?
           </label>
           <div className="grid grid-cols-2 gap-4 max-w-xl">
@@ -81,13 +81,13 @@ export default function Step1({ formData, onChange }: Step1Props) {
                   key={type}
                   type="button"
                   onClick={() => onChange({ employmentType: type })}
-                  className={`relative flex flex-col items-center justify-center p-8 rounded-xl bg-surface-container-lowest dark:bg-[#1a233d] ambient-shadow transition-all hover:scale-[1.02] border-2 ${
+                  className={`relative flex flex-col items-center justify-center p-8 rounded-xl bg-surface-container-lowest ambient-shadow transition-all hover:scale-[1.02] border-2 ${
                     selected
                       ? 'border-on-tertiary-container bg-tertiary-fixed/10'
                       : 'border-transparent hover:border-on-tertiary-container/30'
                   }`}
                 >
-                  <span className="font-headline text-3xl font-extrabold text-primary dark:text-[#f7f9fb] mb-2">
+                  <span className="font-headline text-3xl font-extrabold text-foreground mb-2">
                     {type}
                   </span>
                   <span className="font-label text-[10px] font-bold uppercase tracking-tighter text-on-secondary-container">

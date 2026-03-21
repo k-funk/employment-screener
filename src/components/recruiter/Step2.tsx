@@ -45,7 +45,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Scale
           </label>
-          <p className="font-headline text-xl font-bold leading-tight text-primary dark:text-[#f7f9fb]">
+          <p className="font-headline text-xl font-bold leading-tight text-foreground">
             How large is the engineering team?
           </p>
           <p className="text-on-secondary-container text-sm mt-2">
@@ -60,7 +60,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
               onChange={(e) => onChange({ orgSize: e.target.value })}
               placeholder="0"
               min="1"
-              className="w-full bg-surface-container-lowest border-0 border-b-2 border-surface-container-highest focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-surface-dim dark:bg-transparent dark:text-[#f7f9fb] dark:border-outline"
+              className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-outline-variant"
             />
             <div className="absolute right-0 bottom-4 text-on-secondary-container font-label font-bold text-xs uppercase tracking-widest">
               Engineers
@@ -75,7 +75,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Hierarchy
           </label>
-          <p className="font-headline text-xl font-bold leading-tight text-primary dark:text-[#f7f9fb]">
+          <p className="font-headline text-xl font-bold leading-tight text-foreground">
             Management layers between an IC and the CTO?
           </p>
           <p className="text-on-secondary-container text-sm mt-2">
@@ -94,7 +94,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
                   className={`aspect-square flex items-center justify-center rounded-xl font-headline font-bold text-lg ambient-shadow transition-all ${
                     selected
                       ? 'bg-tertiary-fixed-dim border-2 border-on-tertiary-container text-on-tertiary-container'
-                      : 'bg-surface-container-lowest dark:bg-[#1a233d] border border-transparent hover:border-on-tertiary-container text-primary dark:text-[#f7f9fb]'
+                      : 'bg-surface-container-lowest border border-transparent hover:border-on-tertiary-container text-foreground'
                   }`}
                 >
                   {val}
@@ -111,7 +111,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Presence
           </label>
-          <p className="font-headline text-xl font-bold leading-tight text-primary dark:text-[#f7f9fb]">
+          <p className="font-headline text-xl font-bold leading-tight text-foreground">
             What&apos;s the face-time situation?
           </p>
           <p className="text-on-secondary-container text-sm mt-2">
@@ -127,9 +127,9 @@ export default function Step2({ formData, onChange }: Step2Props) {
                   key={opt.value}
                   type="button"
                   onClick={() => onChange({ presence: opt.value })}
-                  className={`p-5 rounded-xl bg-surface-container-low dark:bg-[#1a233d] border-2 transition-all flex items-center justify-between text-left ${
+                  className={`p-5 rounded-xl bg-surface-container-low border-2 transition-all flex items-center justify-between text-left ${
                     selected
-                      ? 'border-on-tertiary-container bg-surface-container-lowest dark:bg-[#222d4a]'
+                      ? 'border-on-tertiary-container bg-surface-selected'
                       : 'border-transparent'
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
                       </span>
                     </div>
                     <div>
-                      <div className="font-headline font-bold text-primary dark:text-[#f7f9fb]">
+                      <div className="font-headline font-bold text-foreground">
                         {opt.label}
                       </div>
                       <div className="text-xs text-on-secondary-container font-medium">
@@ -163,7 +163,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           </div>
 
           {/* Frequency Slider */}
-          <div className="mt-6 p-6 rounded-xl bg-surface-container-lowest dark:bg-[#1a233d] ambient-shadow">
+          <div className="mt-6 p-6 rounded-xl bg-surface-container-lowest ambient-shadow">
             <label className="font-label text-[0.65rem] uppercase tracking-widest font-bold text-on-secondary-container block mb-4">
               Frequency of in-person collaboration
             </label>

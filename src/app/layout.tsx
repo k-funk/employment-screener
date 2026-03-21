@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body className="bg-surface dark:bg-[#131b2e] text-on-surface dark:text-[#f7f9fb] font-body min-h-screen flex flex-col selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+      <body className="bg-surface text-on-surface font-body min-h-screen flex flex-col selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
         <Nav />
         {children}
         <Footer />

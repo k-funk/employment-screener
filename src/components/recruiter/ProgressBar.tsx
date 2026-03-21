@@ -23,20 +23,20 @@ export default function ProgressBar({
             {sectionLabel}
           </span>
           {large ? (
-            <h1 className="font-headline text-3xl font-extrabold tracking-tight mt-1 text-primary dark:text-[#f7f9fb]">
+            <h1 className="font-headline text-3xl font-extrabold tracking-tight mt-1 text-foreground">
               {sectionName}
             </h1>
           ) : (
-            <h2 className="font-headline text-sm font-bold text-primary dark:text-[#f7f9fb] mt-1">
+            <h2 className="font-headline text-sm font-bold text-foreground mt-1">
               {sectionName}
             </h2>
           )}
         </div>
-        <span className="font-label text-sm font-bold text-primary dark:text-[#f7f9fb]">
+        <span className="font-label text-sm font-bold text-foreground">
           Step {step} of {totalSteps}
         </span>
       </div>
-      <div className="h-1.5 w-full bg-surface-container dark:bg-surface-container-highest rounded-full overflow-hidden">
+      <div className="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
         <div
           className="h-full bg-on-tertiary-container rounded-full transition-all duration-500"
           style={{ width: `${pct}%` }}

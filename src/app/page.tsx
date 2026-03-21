@@ -13,7 +13,7 @@ export default function ResumePage() {
               <span className="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse" />
               Available for Senior Roles
             </div>
-            <h1 className="font-headline font-extrabold text-5xl md:text-7xl lg:text-8xl text-primary dark:text-[#f7f9fb] tracking-tighter leading-tight mb-8">
+            <h1 className="font-headline font-extrabold text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tighter leading-tight mb-8">
               Kevin Funk
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold text-on-tertiary-container mb-6">
@@ -54,7 +54,7 @@ export default function ResumePage() {
           </div>
 
           <div className="lg:col-span-4 space-y-4 pt-12">
-            <div className="bg-white p-6 rounded-2xl border border-surface-container-highest shadow-sm">
+            <div className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant ambient-shadow">
               <h4 className="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">
                 Contact &amp; Socials
               </h4>
@@ -120,7 +120,7 @@ export default function ResumePage() {
                   (skill, i) => (
                     <span
                       key={skill}
-                      className="px-4 py-2 rounded-xl font-medium border border-outline-variant/10 bg-primary-container text-primary-fixed"
+                      className="px-4 py-2 rounded-xl font-medium border border-outline-variant bg-primary-container text-primary-fixed"
                     >
                       {skill}
                     </span>
@@ -138,7 +138,7 @@ export default function ResumePage() {
                   (skill) => (
                     <span
                       key={skill}
-                      className="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant/10"
+                      className="px-4 py-2 bg-primary-container/50 text-primary-fixed rounded-xl font-medium border border-outline-variant"
                     >
                       {skill}
                     </span>
@@ -153,7 +153,7 @@ export default function ResumePage() {
       {/* Work Experience Section */}
       <section className="max-w-7xl mx-auto px-8 py-24">
         <div className="mb-16">
-          <h2 className="font-headline font-extrabold text-4xl text-primary dark:text-[#f7f9fb] mb-4">
+          <h2 className="font-headline font-extrabold text-4xl text-foreground mb-4">
             Work Experience
           </h2>
           <div className="w-24 h-1.5 cta-gradient rounded-full" />
@@ -161,10 +161,10 @@ export default function ResumePage() {
 
         <div className="space-y-12">
           {/* Hazel Health */}
-          <div className="bg-surface-container-lowest dark:bg-[#1a233d] p-8 md:p-10 rounded-3xl ambient-shadow border border-white/50 group">
+          <div className="bg-surface-container-lowest p-8 md:p-10 rounded-3xl ambient-shadow border border-white/50 group">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
               <div>
-                <h3 className="font-headline font-bold text-2xl text-primary dark:text-[#f7f9fb] mb-1">
+                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
                   Staff Software Engineer &lt;&lt; Senior Software Engineer
                 </h3>
                 <p className="text-on-tertiary-container font-bold text-lg">Hazel Health</p>
@@ -201,7 +201,7 @@ export default function ResumePage() {
                   <li key={label} className="flex gap-3">
                     <span className="text-emerald-500 font-bold mt-1">•</span>
                     <div>
-                      <strong className="text-primary dark:text-[#f7f9fb]">{label}:</strong> {text}
+                      <strong className="text-foreground">{label}:</strong> {text}
                     </div>
                   </li>
                 ))}
@@ -228,7 +228,7 @@ export default function ResumePage() {
                   <li key={label} className="flex gap-3">
                     <span className="text-emerald-500 font-bold mt-1">•</span>
                     <div>
-                      <strong className="text-primary dark:text-[#f7f9fb]">{label}:</strong> {text}
+                      <strong className="text-foreground">{label}:</strong> {text}
                     </div>
                   </li>
                 ))}
@@ -237,10 +237,10 @@ export default function ResumePage() {
           </div>
 
           {/* EasyPost */}
-          <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+          <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
               <div>
-                <h3 className="font-headline font-bold text-2xl text-primary dark:text-[#f7f9fb] mb-1">
+                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
                   Senior Software Engineer/Supporting Designer
                 </h3>
                 <p className="text-on-tertiary-container font-bold text-lg">EasyPost</p>
@@ -272,10 +272,10 @@ export default function ResumePage() {
           </div>
 
           {/* eBay */}
-          <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+          <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
               <div>
-                <h3 className="font-headline font-bold text-2xl text-primary dark:text-[#f7f9fb] mb-1">
+                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
                   Software Engineer &lt;&lt; Web Developer &lt;&lt; Designer &lt;&lt; Courier
                 </h3>
                 <p className="text-on-tertiary-container font-bold text-lg">eBay</p>
@@ -305,10 +305,10 @@ export default function ResumePage() {
           </div>
 
           {/* OpenDNS */}
-          <div className="bg-surface-container-low dark:bg-[#1a233d] p-8 md:p-10 rounded-3xl border border-outline-variant/10">
+          <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
               <div>
-                <h3 className="font-headline font-bold text-2xl text-primary dark:text-[#f7f9fb] mb-1">
+                <h3 className="font-headline font-bold text-2xl text-foreground mb-1">
                   Software Engineer (Intern)
                 </h3>
                 <p className="text-on-tertiary-container font-bold text-lg">OpenDNS</p>
@@ -354,10 +354,10 @@ export default function ResumePage() {
           ].map(({ title, org, years, location }) => (
             <div
               key={title}
-              className="bg-surface-container-low dark:bg-[#1a233d] px-8 py-6 rounded-3xl border border-outline-variant/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+              className="bg-surface-container-low px-8 py-6 rounded-3xl border border-outline-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
             >
               <div>
-                <h3 className="font-headline font-bold text-xl text-primary dark:text-[#f7f9fb]">
+                <h3 className="font-headline font-bold text-xl text-foreground">
                   {title}
                 </h3>
                 <p className="text-on-tertiary-container font-bold">{org}</p>
@@ -376,10 +376,10 @@ export default function ResumePage() {
       </section>
 
       {/* Education Section */}
-      <section className="max-w-7xl mx-auto px-8 py-24 border-t border-outline-variant/10">
+      <section className="max-w-7xl mx-auto px-8 py-24 border-t border-outline-variant">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <div className="md:col-span-1">
-            <h2 className="font-headline font-extrabold text-3xl text-primary dark:text-[#f7f9fb] mb-4">
+            <h2 className="font-headline font-extrabold text-3xl text-foreground mb-4">
               Education
             </h2>
             <p className="text-secondary">Academic foundations and professional certifications.</p>
@@ -391,7 +391,7 @@ export default function ResumePage() {
                   <h4 className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">
                     Graduate
                   </h4>
-                  <p className="font-bold text-primary dark:text-[#f7f9fb] text-lg">
+                  <p className="font-bold text-foreground text-lg">
                     M.S., Computer Science/Web Science
                   </p>
                   <p className="text-secondary">Stanford University • 2018</p>
@@ -403,7 +403,7 @@ export default function ResumePage() {
                   <h4 className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">
                     Undergraduate
                   </h4>
-                  <p className="font-bold text-primary dark:text-[#f7f9fb] text-lg">
+                  <p className="font-bold text-foreground text-lg">
                     B.S., Visual Communication Design
                   </p>
                   <p className="text-secondary">San Francisco State University • 2011</p>
@@ -414,7 +414,7 @@ export default function ResumePage() {
                   <h4 className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">
                     Certifications
                   </h4>
-                  <p className="font-bold text-primary dark:text-[#f7f9fb] text-lg">
+                  <p className="font-bold text-foreground text-lg">
                     LAMP Fundamentals Certificate
                   </p>
                   <p className="text-secondary">City College of San Francisco • 2013</p>
@@ -423,7 +423,7 @@ export default function ResumePage() {
                   <h4 className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4">
                     Military
                   </h4>
-                  <p className="font-bold text-primary dark:text-[#f7f9fb] text-lg">
+                  <p className="font-bold text-foreground text-lg">
                     A.A.S., Air and Space Operations Technology
                   </p>
                   <p className="text-secondary">Community College of the Air Force • 2008</p>

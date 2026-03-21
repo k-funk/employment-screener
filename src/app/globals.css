@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* Surface hierarchy */
     --color-surface: #f7f9fb;
     --color-surface-dim: #d8dadc;
     --color-surface-bright: #f7f9fb;
@@ -14,10 +15,18 @@
     --color-surface-container-high: #e6e8ea;
     --color-surface-container-highest: #e0e3e5;
     --color-surface-tint: #565e74;
+    --color-surface-selected: #f2f4f6;
+
+    /* Background */
     --color-background: #f7f9fb;
     --color-on-background: #191c1e;
     --color-on-surface: #191c1e;
     --color-on-surface-variant: #454652;
+
+    /* Foreground (adaptive heading/body text) */
+    --color-foreground: #131b2e;
+
+    /* Primary */
     --color-primary: #131b2e;
     --color-on-primary: #ffffff;
     --color-primary-container: #282f44;
@@ -26,6 +35,8 @@
     --color-primary-fixed-dim: #bec6e0;
     --color-on-primary-fixed: #131b2e;
     --color-on-primary-fixed-variant: #3f465c;
+
+    /* Secondary */
     --color-secondary: #515f74;
     --color-on-secondary: #ffffff;
     --color-secondary-container: #d5e3fd;
@@ -34,6 +45,8 @@
     --color-secondary-fixed-dim: #b9c7e0;
     --color-on-secondary-fixed: #0d1c2f;
     --color-on-secondary-fixed-variant: #3a485c;
+
+    /* Tertiary */
     --color-tertiary: #002113;
     --color-on-tertiary: #ffffff;
     --color-tertiary-container: #003824;
@@ -42,20 +55,52 @@
     --color-tertiary-fixed-dim: #4edea3;
     --color-on-tertiary-fixed: #002113;
     --color-on-tertiary-fixed-variant: #005236;
+
+    /* Error */
     --color-error: #ba1a1a;
     --color-on-error: #ffffff;
     --color-error-container: #ffdad6;
     --color-on-error-container: #93000a;
+
+    /* Outline */
     --color-outline: #767683;
     --color-outline-variant: #c6c5d4;
+
+    /* Inverse */
     --color-inverse-surface: #2d3133;
     --color-inverse-on-surface: #eff1f3;
     --color-inverse-primary: #bec6e0;
+
+    /* Nav (needs opacity so defined as rgba) */
+    --color-nav-bg: rgba(247, 249, 251, 0.8);
+    --color-nav-btn-hover: rgba(242, 244, 246, 0.5);
   }
 
   .dark {
-    --color-secondary: #c6c5d4;
+    /* Adaptive text */
+    --color-foreground: #f7f9fb;
+    --color-on-surface: #f7f9fb;
     --color-on-surface-variant: #c6c5d4;
+    --color-secondary: #c6c5d4;
+
+    /* Surface hierarchy flipped for dark */
+    --color-surface: #131b2e;
+    --color-surface-container-lowest: #1a233d;
+    --color-surface-container-low: #1a233d;
+    --color-surface-container: #1f2b47;
+    --color-surface-container-high: #222d4a;
+    --color-surface-container-highest: #2a3654;
+    --color-surface-selected: #222d4a;
+
+    /* Tertiary accent brightens in dark */
+    --color-on-tertiary-container: #4edea3;
+
+    /* Borders become slightly more visible in dark */
+    --color-outline-variant: #767683;
+
+    /* Nav */
+    --color-nav-bg: rgba(19, 27, 46, 0.8);
+    --color-nav-btn-hover: rgba(26, 35, 61, 0.5);
   }
 }
 
@@ -65,6 +110,15 @@
   }
   .cta-gradient {
     background: linear-gradient(135deg, #4edea3 0%, #00ad78 100%);
+  }
+  .bg-nav {
+    background-color: var(--color-nav-bg);
+  }
+  .nav-btn-hover:hover {
+    background-color: var(--color-nav-btn-hover);
+  }
+  .dark .nav-btn-hover:hover {
+    background-color: var(--color-nav-btn-hover);
   }
 }
 

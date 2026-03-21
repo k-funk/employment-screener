@@ -14,7 +14,7 @@ export default function Step4({ formData, onChange, error }: Step4Props) {
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Curation
           </label>
-          <p className="font-headline text-xl font-bold leading-tight text-primary dark:text-[#f7f9fb]">
+          <p className="font-headline text-xl font-bold leading-tight text-foreground">
             Securing the connection
           </p>
           <p className="text-on-secondary-container text-sm mt-2">
@@ -24,7 +24,7 @@ export default function Step4({ formData, onChange, error }: Step4Props) {
         </div>
         <div className="md:col-span-7">
           {/* Verification Card */}
-          <div className="p-8 rounded-xl bg-surface-container-low dark:bg-[#1a233d] border border-outline-variant/10 ambient-shadow space-y-8">
+          <div className="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 ambient-shadow space-y-8">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
                 <span className="material-symbols-outlined text-on-secondary-container">
@@ -32,7 +32,7 @@ export default function Step4({ formData, onChange, error }: Step4Props) {
                 </span>
               </div>
               <div>
-                <div className="font-headline font-bold text-primary dark:text-[#f7f9fb]">
+                <div className="font-headline font-bold text-foreground">
                   Human Verification
                 </div>
                 <div className="text-xs text-on-secondary-container font-medium uppercase tracking-tight">
@@ -46,7 +46,7 @@ export default function Step4({ formData, onChange, error }: Step4Props) {
                 <label className="font-label text-[0.7rem] font-bold text-on-surface-variant uppercase tracking-wider">
                   The Question
                 </label>
-                <p className="font-headline text-lg text-primary dark:text-[#f7f9fb] font-bold">
+                <p className="font-headline text-lg text-foreground font-bold">
                   To keep things human, what&apos;s 10 + 5?
                 </p>
               </div>
@@ -56,7 +56,7 @@ export default function Step4({ formData, onChange, error }: Step4Props) {
                   value={formData.verificationAnswer}
                   onChange={(e) => onChange({ verificationAnswer: e.target.value })}
                   placeholder="Type answer..."
-                  className="w-full bg-surface-container-lowest dark:bg-transparent border-0 border-b-2 border-surface-container-highest focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-surface-dim dark:text-[#f7f9fb] dark:border-outline"
+                  className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-outline-variant"
                 />
                 {error && (
                   <p className="mt-2 text-sm font-medium text-error">{error}</p>

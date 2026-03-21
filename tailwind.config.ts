@@ -10,6 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'foreground': 'var(--color-foreground)',
+        'surface-selected': 'var(--color-surface-selected)',
         'surface': 'var(--color-surface)',
         'surface-dim': 'var(--color-surface-dim)',
         'surface-bright': 'var(--color-surface-bright)',
