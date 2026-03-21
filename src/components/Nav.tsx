@@ -15,13 +15,8 @@ export default function Nav() {
   const toggleDark = () => {
     const next = !dark
     setDark(next)
-    if (next) {
-      document.documentElement.classList.add('dark')
-      document.cookie = 'theme=dark; path=/; max-age=31536000; SameSite=Lax'
-    } else {
-      document.documentElement.classList.remove('dark')
-      document.cookie = 'theme=light; path=/; max-age=31536000; SameSite=Lax'
-    }
+    document.documentElement.classList.toggle('dark', next)
+    document.cookie = `theme=${next ? 'dark' : 'light'}; path=/; max-age=31536000; SameSite=Lax`
   }
 
   const isResume = pathname === '/'
