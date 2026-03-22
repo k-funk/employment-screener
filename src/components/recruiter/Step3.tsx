@@ -72,7 +72,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             value={formData.firstSixMonths}
             onChange={(e) => onChange({ firstSixMonths: e.target.value })}
             placeholder="Describe the key initiatives and the specific legacy that I would..."
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container outline-none py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container outline-none px-5 py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
           />
           <div className="flex justify-between items-center mt-4">
             <span className="text-[0.65rem] font-bold text-on-secondary-container/50 uppercase tracking-widest">
@@ -94,7 +94,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             value={formData.techStack}
             onChange={(e) => onChange({ techStack: e.target.value })}
             placeholder="e.g. TypeScript, React, Node, PostgreSQL..."
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>

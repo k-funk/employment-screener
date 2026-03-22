@@ -22,7 +22,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             value={formData.name}
             onChange={(e) => onChange({ name: e.target.value })}
             placeholder="Full name"
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>
@@ -38,7 +38,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             value={formData.email}
             onChange={(e) => onChange({ email: e.target.value })}
             placeholder="you@company.com"
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>
@@ -54,7 +54,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             value={formData.organization}
             onChange={(e) => onChange({ organization: e.target.value })}
             placeholder="Company name"
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>
@@ -71,7 +71,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             value={formData.organizationUrl ?? ''}
             onChange={(e) => onChange({ organizationUrl: e.target.value })}
             placeholder="https://company.com"
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>
@@ -87,7 +87,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             value={formData.industry}
             onChange={(e) => onChange({ industry: e.target.value })}
             placeholder="Industry or sector"
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>
@@ -106,10 +106,10 @@ export default function Step1({ formData, onChange }: Step1Props) {
                   key={type}
                   type="button"
                   onClick={() => onChange({ employmentType: type })}
-                  className={`relative flex flex-col items-center justify-center p-8 rounded-xl bg-surface-container-lowest ambient-shadow transition-all hover:scale-[1.02] border-2 ${
+                  className={`relative flex flex-col items-center justify-center p-8 rounded-xl bg-surface-container-low border-2 transition-all ${
                     selected
-                      ? 'border-on-tertiary-container bg-tertiary-fixed/10'
-                      : 'border-transparent hover:border-on-tertiary-container/30'
+                      ? 'border-on-tertiary-container'
+                      : 'border-transparent hover:border-on-tertiary-container'
                   }`}
                 >
                   <span className="font-headline text-3xl font-extrabold text-foreground mb-2">

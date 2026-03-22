@@ -24,7 +24,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
             value={formData.additionalNotes}
             onChange={(e) => onChange({ additionalNotes: e.target.value })}
             placeholder="Feel free to share anything on your mind..."
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container outline-none py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container outline-none px-5 py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
           />
         </QuestionContent>
       </QuestionRow>
@@ -40,7 +40,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
             value={formData.verificationAnswer}
             onChange={(e) => onChange({ verificationAnswer: e.target.value })}
             placeholder="Type answer..."
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
         </QuestionContent>
       </QuestionRow>

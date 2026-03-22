@@ -34,9 +34,9 @@ export default function Step2({ formData, onChange }: Step2Props) {
               onChange={(e) => onChange({ orgSize: e.target.value })}
               placeholder="0"
               inputMode="numeric"
-              className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-outline-variant"
+              className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-5 transition-all placeholder:text-outline-variant outline-none"
             />
-            <div className="absolute right-0 bottom-4 text-on-secondary-container font-label font-bold text-xs uppercase tracking-widest">
+            <div className="absolute right-5 top-1/2 -translate-y-1/2 text-on-secondary-container font-label font-bold text-xs uppercase tracking-widest">
               Engineers
             </div>
           </div>
@@ -58,10 +58,10 @@ export default function Step2({ formData, onChange }: Step2Props) {
                   key={val}
                   type="button"
                   onClick={() => onChange({ hierarchyLevels: val })}
-                  className={`aspect-square flex items-center justify-center rounded-xl font-headline font-bold text-lg ambient-shadow transition-all ${
+                  className={`aspect-square flex items-center justify-center rounded-xl font-headline font-bold text-lg bg-surface-container-low border-2 transition-all ${
                     selected
-                      ? 'bg-tertiary-fixed-dim border-2 border-on-tertiary-container text-on-tertiary-container'
-                      : 'bg-surface-container-lowest border border-transparent hover:border-on-tertiary-container text-foreground'
+                      ? 'border-on-tertiary-container text-on-tertiary-container'
+                      : 'border-transparent hover:border-on-tertiary-container text-foreground'
                   }`}
                 >
                   {val}
