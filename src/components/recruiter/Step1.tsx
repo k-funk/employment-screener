@@ -7,7 +7,7 @@ interface Step1Props {
 
 export default function Step1({ formData, onChange }: Step1Props) {
   return (
-    <div className="space-y-16 w-full">
+    <>
       {/* Company Name */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-3">
@@ -87,6 +87,6 @@ export default function Step1({ formData, onChange }: Step1Props) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -19,7 +19,6 @@ const initialData: RecruiterFormData = {
   orgSize: '',
   hierarchyLevels: '',
   presence: '',
-  presenceFrequency: 3,
   fundingStage: '',
   firstSixMonths: '',
   techStack: '',
@@ -119,13 +118,15 @@ export default function RecruiterPage() {
         )}
 
         {/* Step Content */}
-        <div className={isStep1 ? 'w-full max-w-7xl' : 'w-full max-w-3xl'}>
-          {step === 1 && <Step1 formData={formData} onChange={onChange} />}
-          {step === 2 && <Step2 formData={formData} onChange={onChange} />}
-          {step === 3 && <Step3 formData={formData} onChange={onChange} />}
-          {step === 4 && (
-            <Step4 formData={formData} onChange={onChange} />
-          )}
+        <div className="space-y-16 w-full max-w-7xl">
+          {(() => {
+            switch (step) {
+              case 1: return <Step1 formData={formData} onChange={onChange} />
+              case 2: return <Step2 formData={formData} onChange={onChange} />
+              case 3: return <Step3 formData={formData} onChange={onChange} />
+              case 4: return <Step4 formData={formData} onChange={onChange} />
+            }
+          })()}
         </div>
 
         {/* Validation error */}

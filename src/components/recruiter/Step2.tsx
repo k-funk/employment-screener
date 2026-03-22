@@ -34,13 +34,12 @@ const PRESENCE_OPTIONS = [
   },
 ]
 
-const FREQ_LABELS = ['Rarely', '2-3 Days/Week', 'Daily']
 
 export default function Step2({ formData, onChange }: Step2Props) {
   return (
-    <div className="w-full max-w-3xl space-y-12">
+    <>
       {/* Org Size */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Scale
@@ -67,10 +66,10 @@ export default function Step2({ formData, onChange }: Step2Props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Hierarchy */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Hierarchy
@@ -103,10 +102,10 @@ export default function Step2({ formData, onChange }: Step2Props) {
             })}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Presence */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Presence
@@ -162,27 +161,8 @@ export default function Step2({ formData, onChange }: Step2Props) {
             })}
           </div>
 
-          {/* Frequency Slider */}
-          <div className="mt-6 p-6 rounded-xl bg-surface-container-lowest ambient-shadow">
-            <label className="font-label text-[0.65rem] uppercase tracking-widest font-bold text-on-secondary-container block mb-4">
-              Frequency of in-person collaboration
-            </label>
-            <div className="flex justify-between text-xs font-bold text-on-secondary-container mb-2">
-              {FREQ_LABELS.map((l) => (
-                <span key={l}>{l}</span>
-              ))}
-            </div>
-            <input
-              type="range"
-              min="1"
-              max="5"
-              value={formData.presenceFrequency}
-              onChange={(e) => onChange({ presenceFrequency: parseInt(e.target.value) })}
-              className="w-full h-1.5 bg-surface-container rounded-full appearance-none cursor-pointer accent-on-tertiary-container"
-            />
-          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </>
   )
 }

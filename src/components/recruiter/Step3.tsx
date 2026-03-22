@@ -18,9 +18,9 @@ export default function Step3({ formData, onChange }: Step3Props) {
     : 0
 
   return (
-    <div className="w-full max-w-3xl space-y-16">
+    <>
       {/* Funding Stage */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Capital Structure
@@ -60,10 +60,10 @@ export default function Step3({ formData, onChange }: Step3Props) {
             )
           })}
         </div>
-      </section>
+      </div>
 
       {/* First 6 Months */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Strategic Contribution
@@ -93,10 +93,10 @@ export default function Step3({ formData, onChange }: Step3Props) {
             Tip: Be specific about technical challenges or business metrics they will own.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Tech Stack */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             TECH STACK
@@ -117,7 +117,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
         </div>
-      </section>
-    </div>
+      </div>
+    </>
   )
 }

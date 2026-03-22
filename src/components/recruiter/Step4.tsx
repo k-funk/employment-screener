@@ -9,8 +9,8 @@ interface Step4Props {
 
 export default function Step4({ formData, onChange }: Step4Props) {
   return (
-    <div className="w-full max-w-3xl space-y-12">
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-5">
           <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
             Curation
@@ -63,7 +63,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Social Proof */}
       <div className="flex justify-between items-center px-4 pt-4 border-t border-outline-variant/10">
@@ -82,6 +82,6 @@ export default function Step4({ formData, onChange }: Step4Props) {
           Trusted by 200+ global recruiters
         </p>
       </div>
-    </div>
+    </>
   )
 }
