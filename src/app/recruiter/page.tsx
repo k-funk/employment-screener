@@ -8,7 +8,7 @@ import Step2 from '@/components/recruiter/Step2'
 import Step3 from '@/components/recruiter/Step3'
 import Step4, { VERIFICATION_ANSWER } from '@/components/recruiter/Step4'
 import ThankYou from '@/components/recruiter/ThankYou'
-import { RecruiterFormData } from '@/types/recruiter'
+import { RecruiterFormData, toSubmissionData } from '@/types/recruiter'
 import { submitForm } from '@/lib/submitForm'
 
 type Step = 1 | 2 | 3 | 4 | 'done' | 'submissionError'
@@ -64,7 +64,7 @@ function validate(step: ActiveStep, data: RecruiterFormData): string | undefined
 }
 
 export default function RecruiterPage() {
-  const [step, setStep] = useState<Step>(1)
+  const [step, setStep] = useState<Step>('submissionError')
   const [formData, setFormData] = useState<RecruiterFormData>(initialData)
   const [error, setError] = useState('')
 
@@ -167,8 +167,7 @@ function StepContent({ step, formData, onChange }: {
 
 function SubmissionError({ onRetry, formData }: { onRetry: () => void; formData: RecruiterFormData }) {
   const copyToClipboard = () => {
-    const { verificationAnswer: _, ...payload } = formData
-    void navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
+    void navigator.clipboard.writeText(JSON.stringify(toSubmissionData(formData), null, 2))
   }
 
   return (

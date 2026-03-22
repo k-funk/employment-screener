@@ -11,3 +11,9 @@ export interface RecruiterFormData {
   additionalNotes: string
   verificationAnswer: string
 }
+
+export type RecruiterFormDataForSubmission = Omit<RecruiterFormData, 'verificationAnswer'>
+
+export function toSubmissionData({ verificationAnswer: _, ...rest }: RecruiterFormData): RecruiterFormDataForSubmission {
+  return rest
+}
