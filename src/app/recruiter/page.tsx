@@ -27,10 +27,10 @@ const initialData: RecruiterFormData = {
 }
 
 const SECTIONS = [
-  { label: 'Section 01', name: 'Recruiter Intake' },
-  { label: 'Section 02', name: 'Team & Structure' },
-  { label: 'Section 03', name: 'Growth & Mission' },
-  { label: 'Section 04', name: 'Finalizing Your Interest' },
+  'Recruiter Intake',
+  'Team & Structure',
+  'Growth & Mission',
+  'Finalizing Your Interest',
 ]
 
 function validate(step: number, data: RecruiterFormData): string | null {
@@ -98,11 +98,9 @@ export default function RecruiterPage() {
     <section className="w-full">
       <PageContainer className="py-12 md:py-20 flex flex-col items-center">
         <ProgressBar
-          sectionLabel={section.label}
-          sectionName={section.name}
+          sectionName={section}
           step={stepNum}
           totalSteps={4}
-          large={!isStep1}
         />
 
         {/* Step 1 Hero Header */}
