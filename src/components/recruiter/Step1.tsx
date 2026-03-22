@@ -1,4 +1,6 @@
 import { RecruiterFormData } from '@/types/recruiter'
+import QuestionHeader from '@/components/recruiter/QuestionHeader'
+import QuestionRow from '@/components/recruiter/QuestionRow'
 
 interface Step1Props {
   formData: RecruiterFormData
@@ -8,17 +10,12 @@ interface Step1Props {
 export default function Step1({ formData, onChange }: Step1Props) {
   return (
     <>
-      {/* Company Name */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-3">
-          <span className="font-label text-xs font-bold uppercase tracking-widest text-on-secondary-container">
-            ORGANIZATION
-          </span>
-        </div>
-        <div className="md:col-span-9">
-          <label className="block text-2xl font-headline font-bold text-foreground mb-4">
-            Great to meet you! Who are you representing today?
-          </label>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Organization"
+          question="Great to meet you! Who are you representing today?"
+        />
+        <div className="md:col-span-7">
           <input
             type="text"
             value={formData.companyName}
@@ -27,19 +24,14 @@ export default function Step1({ formData, onChange }: Step1Props) {
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
         </div>
-      </div>
+      </QuestionRow>
 
-      {/* Industry */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-3">
-          <span className="font-label text-xs font-bold uppercase tracking-widest text-on-secondary-container">
-            SECTOR
-          </span>
-        </div>
-        <div className="md:col-span-9">
-          <label className="block text-2xl font-headline font-bold text-foreground mb-4">
-            And what field are they making waves in?
-          </label>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Sector"
+          question="And what field are they making waves in?"
+        />
+        <div className="md:col-span-7">
           <input
             type="text"
             value={formData.industry}
@@ -48,19 +40,14 @@ export default function Step1({ formData, onChange }: Step1Props) {
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
         </div>
-      </div>
+      </QuestionRow>
 
-      {/* Employment Type */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-3">
-          <span className="font-label text-xs font-bold uppercase tracking-widest text-on-secondary-container">
-            ENGAGEMENT MODEL
-          </span>
-        </div>
-        <div className="md:col-span-9">
-          <label className="block text-2xl font-headline font-bold text-foreground mb-8">
-            What structure are you looking to explore?
-          </label>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Engagement Model"
+          question="What structure are you looking to explore?"
+        />
+        <div className="md:col-span-7">
           <div className="grid grid-cols-2 gap-4 max-w-xl">
             {(['FT', 'PT'] as const).map((type) => {
               const selected = formData.employmentType === type
@@ -86,7 +73,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             })}
           </div>
         </div>
-      </div>
+      </QuestionRow>
     </>
   )
 }

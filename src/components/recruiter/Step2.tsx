@@ -1,4 +1,6 @@
 import { RecruiterFormData } from '@/types/recruiter'
+import QuestionHeader from '@/components/recruiter/QuestionHeader'
+import QuestionRow from '@/components/recruiter/QuestionRow'
 
 interface Step2Props {
   formData: RecruiterFormData
@@ -39,26 +41,20 @@ export default function Step2({ formData, onChange }: Step2Props) {
   return (
     <>
       {/* Org Size */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            Scale
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            How large is the engineering team?
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            Quantify the current department size to help us understand the scope of the role.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Org Size"
+          question="How large is the engineering team?"
+          description="Quantify the current department size to help us understand the scope of the role."
+        />
         <div className="md:col-span-7">
           <div className="relative group">
             <input
-              type="number"
+              type="text"
               value={formData.orgSize}
               onChange={(e) => onChange({ orgSize: e.target.value })}
               placeholder="0"
-              min="1"
+              inputMode="numeric"
               className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-outline-variant"
             />
             <div className="absolute right-0 bottom-4 text-on-secondary-container font-label font-bold text-xs uppercase tracking-widest">
@@ -66,21 +62,15 @@ export default function Step2({ formData, onChange }: Step2Props) {
             </div>
           </div>
         </div>
-      </div>
+      </QuestionRow>
 
       {/* Hierarchy */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            Hierarchy
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            Management layers between an IC and the CTO?
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            This gauges the flatness of your organization and decision-making speed.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Hierarchy"
+          question="Management layers between an IC and the CTO?"
+          description="This gauges the flatness of your organization and decision-making speed."
+        />
         <div className="md:col-span-7">
           <div className="grid grid-cols-6 gap-3">
             {HIERARCHY.map((val) => {
@@ -102,21 +92,15 @@ export default function Step2({ formData, onChange }: Step2Props) {
             })}
           </div>
         </div>
-      </div>
+      </QuestionRow>
 
       {/* Presence */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            Presence
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            What&apos;s the face-time situation?
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            Define the balance between remote flexibility and in-person collaboration.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Presence"
+          question="What's the face-time situation?"
+          description="Define the balance between remote flexibility and in-person collaboration."
+        />
         <div className="md:col-span-7 space-y-4">
           <div className="flex flex-col gap-3">
             {PRESENCE_OPTIONS.map((opt) => {
@@ -162,7 +146,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           </div>
 
         </div>
-      </div>
+      </QuestionRow>
     </>
   )
 }

@@ -1,4 +1,6 @@
 import { RecruiterFormData } from '@/types/recruiter'
+import QuestionHeader from '@/components/recruiter/QuestionHeader'
+import QuestionRow from '@/components/recruiter/QuestionRow'
 
 export const VERIFICATION_ANSWER = '15'
 
@@ -10,19 +12,12 @@ interface Step4Props {
 export default function Step4({ formData, onChange }: Step4Props) {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            Curation
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            Securing the connection
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            We maintain a curated environment by ensuring every connection is intentional and human.
-            Please complete this brief verification.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Curation"
+          question="Securing the connection"
+          description="We maintain a curated environment by ensuring every connection is intentional and human. Please complete this brief verification."
+        />
         <div className="md:col-span-7">
           {/* Verification Card */}
           <div className="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 ambient-shadow space-y-8">
@@ -63,7 +58,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
             </div>
           </div>
         </div>
-      </div>
+      </QuestionRow>
 
       {/* Social Proof */}
       <div className="flex justify-between items-center px-4 pt-4 border-t border-outline-variant/10">

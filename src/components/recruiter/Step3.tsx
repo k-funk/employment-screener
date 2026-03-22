@@ -1,4 +1,6 @@
 import { RecruiterFormData } from '@/types/recruiter'
+import QuestionHeader from '@/components/recruiter/QuestionHeader'
+import QuestionRow from '@/components/recruiter/QuestionRow'
 
 interface Step3Props {
   formData: RecruiterFormData
@@ -20,18 +22,12 @@ export default function Step3({ formData, onChange }: Step3Props) {
   return (
     <>
       {/* Funding Stage */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            Capital Structure
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            Where is the company in its funding journey?
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            Manage risk expectations and trajectory transparency.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Capital Structure"
+          question="Where is the company in its funding journey?"
+          description="Manage risk expectations and trajectory transparency."
+        />
         <div className="md:col-span-7 space-y-3">
           {FUNDING_STAGES.map((stage) => {
             const selected = formData.fundingStage === stage
@@ -60,21 +56,15 @@ export default function Step3({ formData, onChange }: Step3Props) {
             )
           })}
         </div>
-      </div>
+      </QuestionRow>
 
       {/* First 6 Months */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            Strategic Contribution
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            What kind of impact would I make in my first 6 months?
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            Help candidates define their legacy and technical ownership.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Strategic Contribution"
+          question="What kind of impact would I make in my first 6 months?"
+          description="Help candidates define their legacy and technical ownership."
+        />
         <div className="md:col-span-7">
           <div className="relative group bg-surface-container-low p-6 rounded-2xl border-2 border-transparent focus-within:border-on-tertiary-container focus-within:bg-surface-container-lowest transition-all ambient-shadow">
             <textarea
@@ -93,21 +83,15 @@ export default function Step3({ formData, onChange }: Step3Props) {
             Tip: Be specific about technical challenges or business metrics they will own.
           </p>
         </div>
-      </div>
+      </QuestionRow>
 
       {/* Tech Stack */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5">
-          <label className="font-label text-[0.75rem] uppercase tracking-wider font-bold text-on-secondary-container mb-2 block">
-            TECH STACK
-          </label>
-          <p className="font-headline text-xl font-bold leading-tight text-foreground">
-            What&apos;s your primary tech stack?
-          </p>
-          <p className="text-on-secondary-container text-sm mt-2">
-            Share the languages, frameworks, and tools the team works with day-to-day.
-          </p>
-        </div>
+      <QuestionRow>
+        <QuestionHeader
+          topic="Tech Stack"
+          question="What's your primary tech stack?"
+          description="Share the languages, frameworks, and tools the team works with day-to-day."
+        />
         <div className="md:col-span-7">
           <input
             type="text"
@@ -117,7 +101,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
         </div>
-      </div>
+      </QuestionRow>
     </>
   )
 }
