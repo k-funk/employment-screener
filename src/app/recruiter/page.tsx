@@ -125,6 +125,7 @@ export default function RecruiterPage() {
               case 2: return <Step2 formData={formData} onChange={onChange} />
               case 3: return <Step3 formData={formData} onChange={onChange} />
               case 4: return <Step4 formData={formData} onChange={onChange} />
+              default: return step satisfies never
             }
           })()}
         </div>

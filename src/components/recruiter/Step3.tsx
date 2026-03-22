@@ -61,25 +61,20 @@ export default function Step3({ formData, onChange }: Step3Props) {
         <QuestionHeader
           topic="Strategic Contribution"
           question="What kind of impact would I make in my first 6 months?"
-          description="Help candidates define their legacy and technical ownership."
+          description="Help define my legacy and technical ownership."
         />
         <div className="md:col-span-7">
-          <div className="relative group bg-surface-container-low p-6 rounded-2xl border-2 border-transparent focus-within:border-on-tertiary-container focus-within:bg-surface-container-lowest transition-all ambient-shadow">
-            <textarea
-              value={formData.firstSixMonths}
-              onChange={(e) => onChange({ firstSixMonths: e.target.value })}
-              placeholder="Describe the key initiatives and the specific legacy this individual will begin to build..."
-              className="w-full bg-transparent border-none p-0 font-body text-foreground placeholder:text-outline focus:ring-0 resize-none min-h-[160px]"
-            />
-            <div className="flex justify-between items-center mt-4">
-              <span className="text-[0.65rem] font-bold text-on-secondary-container/50 uppercase tracking-widest">
-                {wordCount} / 500 Words
-              </span>
-            </div>
+          <textarea
+            value={formData.firstSixMonths}
+            onChange={(e) => onChange({ firstSixMonths: e.target.value })}
+            placeholder="Describe the key initiatives and the specific legacy that I would..."
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container outline-none py-2 font-body text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
+          />
+          <div className="flex justify-between items-center mt-4">
+            <span className="text-[0.65rem] font-bold text-on-secondary-container/50 uppercase tracking-widest">
+              {wordCount} / 500 Words
+            </span>
           </div>
-          <p className="text-[0.7rem] text-on-secondary-container italic mt-3 px-1">
-            Tip: Be specific about technical challenges or business metrics they will own.
-          </p>
         </div>
       </QuestionRow>
 
