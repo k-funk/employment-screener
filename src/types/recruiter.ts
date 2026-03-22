@@ -5,7 +5,7 @@ export interface RecruiterFormData {
   orgSize: string
   hierarchyLevels: string
   presence: 'remote' | 'hybrid' | 'onsite' | ''
-  fundingStage: string
+  capitalStructure: string
   firstSixMonths: string
   techStack: string
   verificationAnswer: string

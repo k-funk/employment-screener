@@ -19,7 +19,7 @@ const initialData: RecruiterFormData = {
   orgSize: '',
   hierarchyLevels: '',
   presence: '',
-  fundingStage: '',
+  capitalStructure: '',
   firstSixMonths: '',
   techStack: '',
   verificationAnswer: '',
@@ -48,7 +48,7 @@ function validate(step: Exclude<Step, 'done'>, data: RecruiterFormData): string 
       return
     }
     case 3: {
-      if (!data.fundingStage) return 'Please select a funding stage.'
+      if (!data.capitalStructure) return 'Please select a funding stage.'
       if (!data.firstSixMonths.trim()) return 'Please describe the first 6 months impact.'
       return
     }

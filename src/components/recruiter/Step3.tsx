@@ -12,6 +12,9 @@ const FUNDING_STAGES = [
   'Series A / B Growth',
   'Series C / D+ Expansion',
   'Public (Nasdaq / NYSE)',
+  'Bootstrapped / Profitable Private',
+  'Non-Profit / Government / Other',
+  'Experimental / Undisclosed',
 ]
 
 export default function Step3({ formData, onChange }: Step3Props) {
@@ -29,12 +32,12 @@ export default function Step3({ formData, onChange }: Step3Props) {
         />
         <div className="md:col-span-7 space-y-3">
           {FUNDING_STAGES.map((stage) => {
-            const selected = formData.fundingStage === stage
+            const selected = formData.capitalStructure === stage
             return (
               <button
                 key={stage}
                 type="button"
-                onClick={() => onChange({ fundingStage: stage })}
+                onClick={() => onChange({ capitalStructure: stage })}
                 className={`w-full p-5 rounded-xl bg-surface-container-low border-2 transition-all flex items-center justify-between text-left ${
                   selected
                     ? 'border-on-tertiary-container bg-surface-selected'
