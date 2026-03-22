@@ -7,16 +7,11 @@ interface ProgressBarProps {
 export default function ProgressBar({ sectionName, step, totalSteps }: ProgressBarProps) {
   return (
     <div className="w-full mb-12">
-      <div className="flex justify-between items-end mb-4">
-        <div>
-          <span className="font-label text-[0.75rem] uppercase tracking-widest font-bold text-on-secondary-container">
-            Section {String(step).padStart(2, '0')}
-          </span>
-          <h1 className="font-headline text-3xl font-extrabold tracking-tight mt-1 text-foreground">
-            {sectionName}
-          </h1>
-        </div>
-        <span className="font-label text-sm font-bold text-foreground">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-2">
+        <h1 className="font-headline text-3xl font-extrabold tracking-tight text-foreground">
+          {sectionName}
+        </h1>
+        <span className="font-label text-[0.75rem] uppercase tracking-widest font-bold text-on-secondary-container mt-1">
           Step {step} of {totalSteps}
         </span>
       </div>

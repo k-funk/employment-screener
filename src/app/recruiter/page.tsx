@@ -122,7 +122,7 @@ export default function RecruiterPage() {
 
   return (
     <section className="w-full">
-      <PageContainer className="py-12 md:py-20 flex flex-col items-center">
+      <PageContainer className="py-8 md:py-16 flex flex-col items-center">
         <ProgressBar
           sectionName={section}
           step={stepNum}
@@ -160,7 +160,7 @@ function StepContent({ step, formData, onChange }: {
         </header>
       )}
 
-      <div className="space-y-16 w-full">
+      <div className="space-y-8 md:space-y-16 w-full">
         {(() => {
           switch (step) {
             case 1: return <Step1 formData={formData} onChange={onChange} />

@@ -26,7 +26,7 @@ function PrimarySection({
   variant = 'default',
   children,
 }: PropsWithChildren<{ title: string; blurb: string; variant?: 'default' | 'inverse' }>) {
-  const sectionClass = variant === 'inverse' ? 'bg-primary text-white py-20' : 'py-20'
+  const sectionClass = variant === 'inverse' ? 'bg-primary text-white py-16' : 'py-16'
   const titleClass = variant === 'inverse' ? 'text-surface-bright' : 'text-foreground'
   const blurbClass = variant === 'inverse' ? 'text-primary-fixed-dim' : 'text-secondary'
   return (
@@ -87,7 +87,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="lg:col-span-4 space-y-4 pt-12">
+        <div className="lg:col-span-4 space-y-4 lg:pt-12">
           <div className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant ambient-shadow">
             <h4 className="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">
               Contact &amp; Socials
