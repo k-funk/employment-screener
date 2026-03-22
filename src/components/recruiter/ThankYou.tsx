@@ -3,7 +3,7 @@ import { EMAIL } from '@/lib/contact'
 
 export default function ThankYou() {
   return (
-    <main className="flex-grow flex items-center justify-center px-6 py-32">
+    <div className="flex-grow flex items-center justify-center px-6 py-8">
       <div className="text-center max-w-lg">
         <div className="w-20 h-20 rounded-full cta-gradient flex items-center justify-center mx-auto mb-8 ambient-shadow">
           <span className="material-symbols-outlined text-4xl text-on-tertiary-fixed">
@@ -32,6 +32,6 @@ export default function ThankYou() {
           </a>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

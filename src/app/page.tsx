@@ -6,13 +6,13 @@ import WorkExperience from '@/components/WorkExperience'
 
 export default function ResumePage() {
   return (
-    <main className="pt-24 pb-16 flex-grow">
+    <>
       <Hero />
       <TechnicalMastery />
       <WorkExperienceSection />
       <Education />
       <CTA />
-    </main>
+    </>
   )
 }
 

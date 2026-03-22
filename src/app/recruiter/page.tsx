@@ -97,17 +97,14 @@ export default function RecruiterPage() {
   const isStep1 = step === 1
 
   return (
-    <main className="flex-grow pt-32 pb-24 px-6 md:px-12 flex flex-col items-center">
-      {/* Progress Bar */}
-      <div className={isStep1 ? 'w-full max-w-7xl' : 'w-full max-w-3xl'}>
-        <ProgressBar
-          sectionLabel={section.label}
-          sectionName={section.name}
-          step={stepNum}
-          totalSteps={4}
-          large={!isStep1}
-        />
-      </div>
+    <div className="max-w-7xl mx-auto px-8 py-12 md:py-20">
+      <ProgressBar
+        sectionLabel={section.label}
+        sectionName={section.name}
+        step={stepNum}
+        totalSteps={4}
+        large={!isStep1}
+      />
 
       {/* Step 1 Hero Header */}
       {isStep1 && (
@@ -168,6 +165,6 @@ export default function RecruiterPage() {
           </span>
         </button>
       </div>
-    </main>
+    </div>
   )
 }

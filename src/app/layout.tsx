@@ -40,7 +40,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="bg-surface text-on-surface font-body min-h-screen flex flex-col selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
         <Nav />
-        {children}
+        <main className="flex-grow flex flex-col pt-20 pb-16">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
