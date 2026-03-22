@@ -15,18 +15,20 @@ export default function ThankYou() {
         </h1>
         <p className="text-lg text-secondary leading-relaxed mb-8">
           Thank you for taking the time to share your opportunity. I&apos;ll review your submission
-          and follow up if there&apos;s a strong match. Looking forward to connecting!
+          and follow up if there&apos;s a match. Looking forward to connecting!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-block"
+            className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all inline-block"
           >
             View Resume
           </Link>
           <a
             href={`mailto:${EMAIL}`}
-            className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all inline-block"
+            className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-block"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Email Directly
           </a>

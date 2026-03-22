@@ -13,6 +13,8 @@ export default function Footer() {
           <a
             href={`mailto:${EMAIL}`}
             className="flex items-center gap-2 text-secondary hover:text-on-tertiary-container transition-colors duration-200 active:scale-95"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="material-symbols-outlined text-base">mail</span>
             Email

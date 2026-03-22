@@ -93,6 +93,8 @@ function Hero() {
               <a
                 href={`mailto:${EMAIL}`}
                 className="flex items-center gap-3 text-secondary hover:text-on-tertiary-container transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="material-symbols-outlined text-sm">mail</span>
                 {EMAIL}
