@@ -11,7 +11,8 @@ import ThankYou from '@/components/recruiter/ThankYou'
 import { RecruiterFormData } from '@/types/recruiter'
 import { submitForm } from '@/lib/submitForm'
 
-type Step = 1 | 2 | 3 | 4 | 'done'
+type Step = 1 | 2 | 3 | 4 | 'done' | 'submissionError'
+type ActiveStep = Exclude<Step, 'done' | 'submissionError'>
 
 const initialData: RecruiterFormData = {
   organization: '',
@@ -34,7 +35,7 @@ const SECTIONS = [
   'Finalizing Your Interest',
 ]
 
-function validate(step: Exclude<Step, 'done'>, data: RecruiterFormData): string | undefined {
+function validate(step: ActiveStep, data: RecruiterFormData): string | undefined {
   switch (step) {
     case 1: {
       if (!data.organization.trim()) return 'Please enter your organization.'
@@ -72,30 +73,39 @@ export default function RecruiterPage() {
     setError('')
   }
 
-  const handleNext = async () => {
-    if (step === 'done') return
+  const handleSubmit = async () => {
+    try {
+      await submitForm(formData)
+      setStep('done')
+    } catch {
+      setStep('submissionError')
+    }
+  }
 
-    const err = validate(step, formData)
+  const handleNext = async () => {
+    if (step === 'done' || step === 'submissionError') return
+
+    const err = validate(step as ActiveStep, formData)
     if (err) {
       setError(err)
       return
     }
 
     if (step === 4) {
-      await submitForm(formData)
-      setStep('done')
+      await handleSubmit()
     } else {
       setStep(((step as number) + 1) as Step)
     }
   }
 
   const handleBack = () => {
-    if (step === 1 || step === 'done') return
+    if (step === 1 || step === 'done' || step === 'submissionError') return
     setStep(((step as number) - 1) as Step)
     setError('')
   }
 
   if (step === 'done') return <ThankYou />
+  if (step === 'submissionError') return <SubmissionError onRetry={handleSubmit} formData={formData} />
 
   const stepNum = step as number
   const section = SECTIONS[stepNum - 1]
@@ -109,9 +119,9 @@ export default function RecruiterPage() {
           totalSteps={4}
         />
 
-        <StepContent step={step} formData={formData} onChange={onChange} />
+        <StepContent step={step as ActiveStep} formData={formData} onChange={onChange} />
 
-        <NavigationFooter step={stepNum as Exclude<Step, 'done'>} onBack={handleBack} onNext={handleNext} />
+        <NavigationFooter step={step as ActiveStep} onBack={handleBack} onNext={handleNext} />
 
         {error && <p className="w-full text-right text-sm font-medium text-error mt-3">{error}</p>}
       </PageContainer>
@@ -120,7 +130,7 @@ export default function RecruiterPage() {
 }
 
 function StepContent({ step, formData, onChange }: {
-  step: Exclude<Step, 'done'>
+  step: ActiveStep
   formData: RecruiterFormData
   onChange: (updates: Partial<RecruiterFormData>) => void
 }) {
@@ -155,8 +165,47 @@ function StepContent({ step, formData, onChange }: {
   )
 }
 
+function SubmissionError({ onRetry, formData }: { onRetry: () => void; formData: RecruiterFormData }) {
+  const copyToClipboard = () => {
+    const { verificationAnswer: _, ...payload } = formData
+    void navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
+  }
+
+  return (
+    <div className="flex-grow flex items-center justify-center px-6 py-8">
+      <div className="text-center max-w-lg">
+        <div className="w-20 h-20 rounded-full bg-error/10 flex items-center justify-center mx-auto mb-8">
+          <span className="material-symbols-outlined text-4xl text-error">error</span>
+        </div>
+        <h1 className="font-headline font-extrabold text-4xl md:text-5xl text-foreground tracking-tight mb-4">
+          Submission failed
+        </h1>
+        <p className="text-lg text-secondary leading-relaxed mb-8">
+          Something went wrong sending your form. You can try again, or copy your answers to save them before retrying.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            type="button"
+            onClick={onRetry}
+            className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all"
+          >
+            Try Again
+          </button>
+          <button
+            type="button"
+            onClick={copyToClipboard}
+            className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all"
+          >
+            Copy Form Data
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function NavigationFooter({ step, onBack, onNext }: {
-  step: Exclude<Step, 'done'>
+  step: ActiveStep
   onBack: () => void
   onNext: () => void
 }) {
