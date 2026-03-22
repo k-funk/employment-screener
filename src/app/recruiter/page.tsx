@@ -23,6 +23,7 @@ const initialData: RecruiterFormData = {
   firstSixMonths: '',
   techStack: '',
   verificationAnswer: '',
+  additionalNotes: '',
 }
 
 const SECTIONS = [
@@ -32,22 +33,32 @@ const SECTIONS = [
   'Finalizing Your Interest',
 ]
 
-function validate(step: number, data: RecruiterFormData): string | null {
-  if (step === 1) {
-    if (!data.companyName.trim()) return 'Please enter your company name.'
-    if (!data.industry.trim()) return 'Please select an industry.'
-    if (!data.employmentType) return 'Please select Full Time or Part Time.'
+function validate(step: Exclude<Step, 'done'>, data: RecruiterFormData): string | undefined {
+  switch (step) {
+    case 1: {
+      if (!data.companyName.trim()) return 'Please enter your company name.'
+      if (!data.industry.trim()) return 'Please select an industry.'
+      if (!data.employmentType) return 'Please select Full Time or Part Time.'
+      return
+    }
+    case 2: {
+      if (!data.orgSize.trim()) return 'Please enter the engineering team size.'
+      if (!data.hierarchyLevels) return 'Please select the number of hierarchy levels.'
+      if (!data.presence) return 'Please select a presence option.'
+      return
+    }
+    case 3: {
+      if (!data.fundingStage) return 'Please select a funding stage.'
+      if (!data.firstSixMonths.trim()) return 'Please describe the first 6 months impact.'
+      return
+    }
+    case 4: {
+      if (data.verificationAnswer.trim() !== VERIFICATION_ANSWER) return "Incorrect. Hint: it's a simple math problem."
+      return
+    }
+    default:
+      return step satisfies never
   }
-  if (step === 2) {
-    if (!data.orgSize.trim()) return 'Please enter the engineering team size.'
-    if (!data.hierarchyLevels) return 'Please select the number of hierarchy levels.'
-    if (!data.presence) return 'Please select a presence option.'
-  }
-  if (step === 3) {
-    if (!data.fundingStage) return 'Please select a funding stage.'
-    if (!data.firstSixMonths.trim()) return 'Please describe the first 6 months impact.'
-  }
-  return null
 }
 
 export default function RecruiterPage() {
@@ -63,22 +74,17 @@ export default function RecruiterPage() {
   const handleNext = () => {
     if (step === 'done') return
 
-    if (step === 4) {
-      if (formData.verificationAnswer.trim() !== VERIFICATION_ANSWER) {
-        setError("Incorrect. Hint: it's a simple math problem.")
-        return
-      }
-      setStep('done')
-      return
-    }
-
-    const err = validate(step as number, formData)
+    const err = validate(step, formData)
     if (err) {
       setError(err)
       return
     }
 
-    setStep(((step as number) + 1) as Step)
+    if (step === 4) {
+      setStep('done')
+    } else {
+      setStep(((step as number) + 1) as Step)
+    }
   }
 
   const handleBack = () => {

@@ -9,4 +9,5 @@ export interface RecruiterFormData {
   firstSixMonths: string
   techStack: string
   verificationAnswer: string
+  additionalNotes: string
 }
