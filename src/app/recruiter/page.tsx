@@ -6,7 +6,7 @@ import ProgressBar from '@/components/recruiter/ProgressBar'
 import Step1 from '@/components/recruiter/Step1'
 import Step2 from '@/components/recruiter/Step2'
 import Step3 from '@/components/recruiter/Step3'
-import Step4 from '@/components/recruiter/Step4'
+import Step4, { VERIFICATION_ANSWER } from '@/components/recruiter/Step4'
 import ThankYou from '@/components/recruiter/ThankYou'
 import { RecruiterFormData } from '@/types/recruiter'
 
@@ -54,21 +54,19 @@ function validate(step: number, data: RecruiterFormData): string | null {
 export default function RecruiterPage() {
   const [step, setStep] = useState<Step>(1)
   const [formData, setFormData] = useState<RecruiterFormData>(initialData)
-  const [validationError, setValidationError] = useState('')
-  const [verificationError, setVerificationError] = useState('')
+  const [error, setError] = useState('')
 
   const onChange = (updates: Partial<RecruiterFormData>) => {
     setFormData((prev) => ({ ...prev, ...updates }))
-    setValidationError('')
-    setVerificationError('')
+    setError('')
   }
 
   const handleNext = () => {
     if (step === 'done') return
 
     if (step === 4) {
-      if (formData.verificationAnswer.trim() !== '15') {
-        setVerificationError("Incorrect. Hint: it's a simple math problem.")
+      if (formData.verificationAnswer.trim() !== VERIFICATION_ANSWER) {
+        setError("Incorrect. Hint: it's a simple math problem.")
         return
       }
       setStep('done')
@@ -77,7 +75,7 @@ export default function RecruiterPage() {
 
     const err = validate(step as number, formData)
     if (err) {
-      setValidationError(err)
+      setError(err)
       return
     }
 
@@ -87,8 +85,7 @@ export default function RecruiterPage() {
   const handleBack = () => {
     if (step === 1 || step === 'done') return
     setStep(((step as number) - 1) as Step)
-    setValidationError('')
-    setVerificationError('')
+    setError('')
   }
 
   if (step === 'done') return <ThankYou />
@@ -129,13 +126,13 @@ export default function RecruiterPage() {
           {step === 2 && <Step2 formData={formData} onChange={onChange} />}
           {step === 3 && <Step3 formData={formData} onChange={onChange} />}
           {step === 4 && (
-            <Step4 formData={formData} onChange={onChange} error={verificationError} />
+            <Step4 formData={formData} onChange={onChange} />
           )}
         </div>
 
         {/* Validation error */}
-        {validationError && (
-          <p className="w-full max-w-3xl mt-4 text-sm font-medium text-error">{validationError}</p>
+        {error && (
+          <p className="w-full max-w-3xl mt-4 text-sm font-medium text-error">{error}</p>
         )}
 
         {/* Navigation */}

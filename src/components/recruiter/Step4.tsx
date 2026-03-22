@@ -1,12 +1,13 @@
 import { RecruiterFormData } from '@/types/recruiter'
 
+export const VERIFICATION_ANSWER = '15'
+
 interface Step4Props {
   formData: RecruiterFormData
   onChange: (updates: Partial<RecruiterFormData>) => void
-  error: string
 }
 
-export default function Step4({ formData, onChange, error }: Step4Props) {
+export default function Step4({ formData, onChange }: Step4Props) {
   return (
     <div className="w-full max-w-3xl space-y-12">
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -58,9 +59,6 @@ export default function Step4({ formData, onChange, error }: Step4Props) {
                   placeholder="Type answer..."
                   className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-0 transition-colors placeholder:text-outline-variant"
                 />
-                {error && (
-                  <p className="mt-2 text-sm font-medium text-error">{error}</p>
-                )}
               </div>
             </div>
           </div>

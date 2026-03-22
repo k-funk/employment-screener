@@ -40,25 +40,13 @@ export default function Step1({ formData, onChange }: Step1Props) {
           <label className="block text-2xl font-headline font-bold text-foreground mb-4">
             And what field are they making waves in?
           </label>
-          <div className="relative">
-            <select
-              value={formData.industry}
-              onChange={(e) => onChange({ industry: e.target.value })}
-              className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium appearance-none cursor-pointer transition-all"
-            >
-              <option value="" disabled>
-                Select industry
-              </option>
-              <option value="tech">Technology &amp; Software</option>
-              <option value="fintech">FinTech &amp; Banking</option>
-              <option value="health">Healthcare &amp; Biotech</option>
-              <option value="retail">E-commerce &amp; Retail</option>
-              <option value="other">Other Global Sector</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-outline">
-              expand_more
-            </span>
-          </div>
+          <input
+            type="text"
+            value={formData.industry}
+            onChange={(e) => onChange({ industry: e.target.value })}
+            placeholder="Industry or sector"
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+          />
         </div>
       </div>
 
