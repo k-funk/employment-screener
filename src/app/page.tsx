@@ -17,6 +17,9 @@ export default function ResumePage() {
   )
 }
 
+const RECRUITER_FORM_ESTIMATE_TIME_MIN = 3
+const RECRUITER_FORM_CTA_TEXT = `Check for Fit (${RECRUITER_FORM_ESTIMATE_TIME_MIN} min)`
+
 function PrimarySection({
   title,
   blurb,
@@ -70,7 +73,7 @@ function Hero() {
               href="/recruiter"
               className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all inline-block"
             >
-              Check for Fit
+              {RECRUITER_FORM_CTA_TEXT}
             </Link>
             <a
               href="/kfunk_resume_2026.pdf"
@@ -398,7 +401,7 @@ function CTA() {
         href="/recruiter"
         className="cta-gradient text-tertiary px-10 py-5 rounded-xl font-extrabold text-xl shadow-lg active:scale-95 transition-all inline-block"
       >
-        Check for Fit
+        {RECRUITER_FORM_CTA_TEXT}
       </Link>
     </PageContainer>
   )
