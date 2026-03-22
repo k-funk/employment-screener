@@ -10,12 +10,12 @@
     --color-surface-bright: #f7f9fb;
     --color-surface-variant: #e0e3e5;
     --color-surface-container-lowest: #ffffff;
-    --color-surface-container-low: #f2f4f6;
-    --color-surface-container: #eceef0;
-    --color-surface-container-high: #e6e8ea;
-    --color-surface-container-highest: #e0e3e5;
+    --color-surface-container-low: #eceef0;
+    --color-surface-container: #e6e8ea;
+    --color-surface-container-high: #e0e3e5;
+    --color-surface-container-highest: #dadcde;
     --color-surface-tint: #565e74;
-    --color-surface-selected: #f2f4f6;
+    --color-surface-selected: #eceef0;
 
     /* Background */
     --color-background: #f7f9fb;
