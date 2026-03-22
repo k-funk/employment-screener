@@ -98,74 +98,73 @@ export default function RecruiterPage() {
   const isStep1 = step === 1
 
   return (
-    <PageContainer className="py-12 md:py-20">
-      <ProgressBar
-        sectionLabel={section.label}
-        sectionName={section.name}
-        step={stepNum}
-        totalSteps={4}
-        large={!isStep1}
-      />
+    <section>
+      <PageContainer className="py-12 md:py-20">
+        <ProgressBar
+          sectionLabel={section.label}
+          sectionName={section.name}
+          step={stepNum}
+          totalSteps={4}
+          large={!isStep1}
+        />
 
-      {/* Step 1 Hero Header */}
-      {isStep1 && (
-        <header className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 w-full max-w-7xl">
-          <div className="md:col-span-8">
-            <h1 className="text-5xl md:text-6xl font-extrabold font-headline tracking-tight text-foreground leading-[1.1] mb-6">
-              Let&apos;s see if we&apos;re a great fit.
-            </h1>
-            <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-              Tailoring this experience starts with understanding your goals. Providing these details
-              helps curate the most relevant case studies and metrics for your review.
-            </p>
-          </div>
-          <div className="hidden md:flex md:col-span-4 justify-end items-start pt-4">
-            <div className="w-16 h-1 bg-tertiary-fixed-dim rounded-full" />
-          </div>
-        </header>
-      )}
-
-      {/* Step Content */}
-      <div className={isStep1 ? 'w-full max-w-7xl' : 'w-full max-w-3xl'}>
-        {step === 1 && <Step1 formData={formData} onChange={onChange} />}
-        {step === 2 && <Step2 formData={formData} onChange={onChange} />}
-        {step === 3 && <Step3 formData={formData} onChange={onChange} />}
-        {step === 4 && (
-          <Step4 formData={formData} onChange={onChange} error={verificationError} />
+        {/* Step 1 Hero Header */}
+        {isStep1 && (
+          <header className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 w-full max-w-7xl">
+            <div className="md:col-span-8">
+              <h1 className="text-5xl md:text-6xl font-extrabold font-headline tracking-tight text-foreground leading-[1.1] mb-6">
+                Let&apos;s see if we&apos;re a great fit.
+              </h1>
+              <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                Tailoring this experience starts with understanding your goals. Providing these details
+                helps curate the most relevant case studies and metrics for your review.
+              </p>
+            </div>
+          </header>
         )}
-      </div>
 
-      {/* Validation error */}
-      {validationError && (
-        <p className="w-full max-w-3xl mt-4 text-sm font-medium text-error">{validationError}</p>
-      )}
+        {/* Step Content */}
+        <div className={isStep1 ? 'w-full max-w-7xl' : 'w-full max-w-3xl'}>
+          {step === 1 && <Step1 formData={formData} onChange={onChange} />}
+          {step === 2 && <Step2 formData={formData} onChange={onChange} />}
+          {step === 3 && <Step3 formData={formData} onChange={onChange} />}
+          {step === 4 && (
+            <Step4 formData={formData} onChange={onChange} error={verificationError} />
+          )}
+        </div>
 
-      {/* Navigation */}
-      <div className="w-full max-w-3xl mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
-        <button
-          type="button"
-          onClick={handleBack}
-          disabled={step === 1}
-          className={`flex items-center gap-2 font-bold py-2 px-4 transition-colors ${
-            step === 1
-              ? 'text-outline cursor-not-allowed'
-              : 'text-foreground hover:text-on-tertiary-container'
-          }`}
-        >
-          <span className="material-symbols-outlined">arrow_back</span>
-          Back
-        </button>
-        <button
-          type="button"
-          onClick={handleNext}
-          className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
-        >
-          {step === 4 ? 'Complete Submission' : 'Next Step'}
-          <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-            arrow_forward
-          </span>
-        </button>
-      </div>
-    </PageContainer>
+        {/* Validation error */}
+        {validationError && (
+          <p className="w-full max-w-3xl mt-4 text-sm font-medium text-error">{validationError}</p>
+        )}
+
+        {/* Navigation */}
+        <div className="w-full max-w-3xl mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
+          <button
+            type="button"
+            onClick={handleBack}
+            disabled={step === 1}
+            className={`flex items-center gap-2 font-bold py-2 px-4 transition-colors ${
+              step === 1
+                ? 'text-outline cursor-not-allowed'
+                : 'text-foreground hover:text-on-tertiary-container'
+            }`}
+          >
+            <span className="material-symbols-outlined">arrow_back</span>
+            Back
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
+          >
+            {step === 4 ? 'Complete Submission' : 'Next Step'}
+            <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
+              arrow_forward
+            </span>
+          </button>
+        </div>
+      </PageContainer>
+    </section>
   )
 }

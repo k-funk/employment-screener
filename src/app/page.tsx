@@ -42,7 +42,7 @@ function PrimarySection({
 
 function Hero() {
   return (
-    <div className="w-full">
+    <section className="w-full">
       <PageContainer className="py-12 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-8">
@@ -120,7 +120,7 @@ function Hero() {
         </div>
         </div>
       </PageContainer>
-    </div>
+    </section>
   )
 }
 
