@@ -13,7 +13,7 @@ import { RecruiterFormData } from '@/types/recruiter'
 type Step = 1 | 2 | 3 | 4 | 'done'
 
 const initialData: RecruiterFormData = {
-  companyName: '',
+  organization: '',
   industry: '',
   employmentType: '',
   orgSize: '',
@@ -36,7 +36,7 @@ const SECTIONS = [
 function validate(step: Exclude<Step, 'done'>, data: RecruiterFormData): string | undefined {
   switch (step) {
     case 1: {
-      if (!data.companyName.trim()) return 'Please enter your company name.'
+      if (!data.organization.trim()) return 'Please enter your organization.'
       if (!data.industry.trim()) return 'Please select an industry.'
       if (!data.employmentType) return 'Please select Full Time or Part Time.'
       return
@@ -136,11 +136,6 @@ export default function RecruiterPage() {
           })()}
         </div>
 
-        {/* Validation error */}
-        {error && (
-          <p className="w-full max-w-3xl mt-4 text-sm font-medium text-error">{error}</p>
-        )}
-
         {/* Navigation */}
         <div className="w-full mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
           <button
@@ -156,17 +151,22 @@ export default function RecruiterPage() {
             <span className="material-symbols-outlined">arrow_back</span>
             Back
           </button>
-          <button
-            type="button"
-            onClick={handleNext}
-            className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
-          >
-            {step === 4 ? 'Complete Submission' : 'Next Step'}
-            <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-              arrow_forward
-            </span>
-          </button>
+          <div className="flex flex-col items-end gap-1">
+            <button
+              type="button"
+              onClick={handleNext}
+              className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
+            >
+              {step === 4 ? 'Complete Submission' : 'Next Step'}
+              <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
+                arrow_forward
+              </span>
+            </button>
+
+          </div>
         </div>
+        {/* Validation error */}
+        {error && <p className="w-full text-right text-sm font-medium text-error mt-3">{error}</p>}
       </PageContainer>
     </section>
   )

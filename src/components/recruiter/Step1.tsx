@@ -18,8 +18,8 @@ export default function Step1({ formData, onChange }: Step1Props) {
         <div className="md:col-span-7">
           <input
             type="text"
-            value={formData.companyName}
-            onChange={(e) => onChange({ companyName: e.target.value })}
+            value={formData.organization}
+            onChange={(e) => onChange({ organization: e.target.value })}
             placeholder="Company name"
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
@@ -28,7 +28,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
 
       <QuestionRow>
         <QuestionHeader
-          topic="Sector"
+          topic="Industry"
           question="And what field are they making waves in?"
         />
         <div className="md:col-span-7">

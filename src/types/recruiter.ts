@@ -1,5 +1,5 @@
 export interface RecruiterFormData {
-  companyName: string
+  organization: string
   industry: string
   employmentType: 'FT' | 'PT' | ''
   orgSize: string
