@@ -1,6 +1,7 @@
 import { RecruiterFormData } from '@/types/recruiter'
 import QuestionHeader from '@/components/recruiter/QuestionHeader'
 import QuestionRow from '@/components/recruiter/QuestionRow'
+import QuestionContent from '@/components/recruiter/QuestionContent'
 
 interface Step1Props {
   formData: RecruiterFormData
@@ -15,7 +16,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           topic="Your Name"
           question={<>First, what&apos;s your <span className="text-on-tertiary-container">name</span>?</>}
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="text"
             value={formData.name}
@@ -23,7 +24,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             placeholder="Full name"
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -31,7 +32,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           topic="Email"
           question={<>And the best <span className="text-on-tertiary-container">email</span> to reach you?</>}
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="email"
             value={formData.email}
@@ -39,7 +40,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             placeholder="you@company.com"
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -47,7 +48,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           topic="Organization"
           question={<>What <span className="text-on-tertiary-container">org</span> are you representing today?</>}
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="text"
             value={formData.organization}
@@ -55,7 +56,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             placeholder="Company name"
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -64,7 +65,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           question={<>Got a <span className="text-on-tertiary-container">link</span> to their website?</>}
           description="Optional"
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="url"
             value={formData.organizationUrl ?? ''}
@@ -72,7 +73,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             placeholder="https://company.com"
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -80,7 +81,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           topic="Industry"
           question={<>And what <span className="text-on-tertiary-container">field</span> are they making waves in?</>}
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="text"
             value={formData.industry}
@@ -88,7 +89,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
             placeholder="Industry or sector"
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -96,7 +97,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           topic="Employment Type"
           question={<>What <span className="text-on-tertiary-container">type of employment</span> is this?</>}
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <div className="grid grid-cols-2 gap-4">
             {(['FT', 'PT'] as const).map((type) => {
               const selected = formData.employmentType === type
@@ -121,7 +122,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
               )
             })}
           </div>
-        </div>
+        </QuestionContent>
       </QuestionRow>
     </>
   )

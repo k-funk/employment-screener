@@ -1,6 +1,7 @@
 import { RecruiterFormData } from '@/types/recruiter'
 import QuestionHeader from '@/components/recruiter/QuestionHeader'
 import QuestionRow from '@/components/recruiter/QuestionRow'
+import QuestionContent from '@/components/recruiter/QuestionContent'
 
 interface Step2Props {
   formData: RecruiterFormData
@@ -25,7 +26,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           question={<>How large is the <span className="text-on-tertiary-container">engineering</span> team?</>}
           description="Quantify the current department size to help us understand the scope of the role."
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <div className="relative group">
             <input
               type="text"
@@ -39,7 +40,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
               Engineers
             </div>
           </div>
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -48,7 +49,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           question={<>Management <span className="text-on-tertiary-container">layers</span> between the average IC and the CTO?</>}
           description="This gauges the flatness of your organization and decision-making speed."
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <div className="grid grid-cols-6 gap-3">
             {HIERARCHY.map((val) => {
               const selected = formData.hierarchyLevels === val
@@ -68,7 +69,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
               )
             })}
           </div>
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -77,7 +78,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
           question={<>What&apos;s the <span className="text-on-tertiary-container">face-time</span> situation?</>}
           description="Define the balance between remote flexibility and in-person collaboration."
         />
-        <div className="md:col-span-7 space-y-4">
+        <QuestionContent className="space-y-4">
           <div className="flex flex-col gap-3">
             {PRESENCE_OPTIONS.map((opt) => {
               const selected = formData.presence === opt.value
@@ -118,7 +119,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
               )
             })}
           </div>
-        </div>
+        </QuestionContent>
       </QuestionRow>
     </>
   )

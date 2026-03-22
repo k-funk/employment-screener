@@ -1,6 +1,7 @@
 import { RecruiterFormData } from '@/types/recruiter'
 import QuestionHeader from '@/components/recruiter/QuestionHeader'
 import QuestionRow from '@/components/recruiter/QuestionRow'
+import QuestionContent from '@/components/recruiter/QuestionContent'
 
 export const VERIFICATION_ANSWER = '15'
 
@@ -18,14 +19,14 @@ export default function Step4({ formData, onChange }: Step4Props) {
           question={<>Is there <span className="text-on-tertiary-container">anything else</span> you&apos;d like me to know?</>}
           description="Optional — Share context, constraints, or anything that didn't fit above."
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <textarea
             value={formData.additionalNotes}
             onChange={(e) => onChange({ additionalNotes: e.target.value })}
             placeholder="Feel free to share anything on your mind..."
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container outline-none py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -33,7 +34,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
           topic="Human Check"
           question={<>What is <span className="text-on-tertiary-container">10 + 5</span>?</>}
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="text"
             value={formData.verificationAnswer}
@@ -41,7 +42,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
             placeholder="Type answer..."
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
     </>
   )

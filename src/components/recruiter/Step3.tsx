@@ -1,6 +1,7 @@
 import { RecruiterFormData } from '@/types/recruiter'
 import QuestionHeader from '@/components/recruiter/QuestionHeader'
 import QuestionRow from '@/components/recruiter/QuestionRow'
+import QuestionContent from '@/components/recruiter/QuestionContent'
 
 interface Step3Props {
   formData: RecruiterFormData
@@ -30,7 +31,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
           question={<>Where is the company in its <span className="text-on-tertiary-container">funding</span> journey?</>}
           description="Manage risk expectations and trajectory transparency."
         />
-        <div className="md:col-span-7 space-y-3">
+        <QuestionContent className="space-y-3">
           {FUNDING_STAGES.map((stage) => {
             const selected = formData.capitalStructure === stage
             return (
@@ -57,7 +58,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
               </button>
             )
           })}
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -66,7 +67,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
           question={<>What kind of <span className="text-on-tertiary-container">impact would I make</span> in my first 6 months?</>}
           description="Help define my legacy and technical ownership."
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <textarea
             value={formData.firstSixMonths}
             onChange={(e) => onChange({ firstSixMonths: e.target.value })}
@@ -78,7 +79,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
               {wordCount} / 500 Words
             </span>
           </div>
-        </div>
+        </QuestionContent>
       </QuestionRow>
 
       <QuestionRow>
@@ -87,7 +88,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
           question={<>What&apos;s your primary <span className="text-on-tertiary-container">tech stack</span>?</>}
           description="Optional — Share the languages, frameworks, and tools the team works with day-to-day."
         />
-        <div className="md:col-span-7">
+        <QuestionContent>
           <input
             type="text"
             value={formData.techStack}
@@ -95,7 +96,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             placeholder="e.g. TypeScript, React, Node, PostgreSQL..."
             className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
           />
-        </div>
+        </QuestionContent>
       </QuestionRow>
     </>
   )
