@@ -8,7 +8,8 @@ import Step2 from '@/components/recruiter/Step2'
 import Step3 from '@/components/recruiter/Step3'
 import Step4, { VERIFICATION_ANSWER } from '@/components/recruiter/Step4'
 import ThankYou from '@/components/recruiter/ThankYou'
-import { RecruiterFormData, toSubmissionData } from '@/types/recruiter'
+import SubmissionError from '@/components/recruiter/SubmissionError'
+import { RecruiterFormData } from '@/types/recruiter'
 import { submitForm } from '@/lib/submitForm'
 
 type Step = 1 | 2 | 3 | 4 | 'done' | 'submissionError'
@@ -67,6 +68,7 @@ export default function RecruiterPage() {
   const [step, setStep] = useState<Step>('submissionError')
   const [formData, setFormData] = useState<RecruiterFormData>(initialData)
   const [error, setError] = useState('')
+  const [submitting, setSubmitting] = useState(false)
 
   const onChange = (updates: Partial<RecruiterFormData>) => {
     setFormData((prev) => ({ ...prev, ...updates }))
@@ -74,11 +76,14 @@ export default function RecruiterPage() {
   }
 
   const handleSubmit = async () => {
+    setSubmitting(true)
     try {
       await submitForm(formData)
       setStep('done')
     } catch {
       setStep('submissionError')
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -105,7 +110,7 @@ export default function RecruiterPage() {
   }
 
   if (step === 'done') return <ThankYou />
-  if (step === 'submissionError') return <SubmissionError onRetry={handleSubmit} formData={formData} />
+  if (step === 'submissionError') return <SubmissionError onRetry={handleSubmit} formData={formData} submitting={submitting} />
 
   const stepNum = step as number
   const section = SECTIONS[stepNum - 1]
@@ -121,7 +126,7 @@ export default function RecruiterPage() {
 
         <StepContent step={step as ActiveStep} formData={formData} onChange={onChange} />
 
-        <NavigationFooter step={step as ActiveStep} onBack={handleBack} onNext={handleNext} />
+        <NavigationFooter step={step as ActiveStep} onBack={handleBack} onNext={handleNext} submitting={submitting} />
 
         {error && <p className="w-full text-right text-sm font-medium text-error mt-3">{error}</p>}
       </PageContainer>
@@ -165,57 +170,20 @@ function StepContent({ step, formData, onChange }: {
   )
 }
 
-function SubmissionError({ onRetry, formData }: { onRetry: () => void; formData: RecruiterFormData }) {
-  const copyToClipboard = () => {
-    void navigator.clipboard.writeText(JSON.stringify(toSubmissionData(formData), null, 2))
-  }
-
-  return (
-    <div className="flex-grow flex items-center justify-center px-6 py-8">
-      <div className="text-center max-w-lg">
-        <div className="w-20 h-20 rounded-full bg-error/10 flex items-center justify-center mx-auto mb-8">
-          <span className="material-symbols-outlined text-4xl text-error">error</span>
-        </div>
-        <h1 className="font-headline font-extrabold text-4xl md:text-5xl text-foreground tracking-tight mb-4">
-          Submission failed
-        </h1>
-        <p className="text-lg text-secondary leading-relaxed mb-8">
-          Something went wrong sending your form. You can try again, or copy your answers to save them before retrying.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            type="button"
-            onClick={onRetry}
-            className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all"
-          >
-            Try Again
-          </button>
-          <button
-            type="button"
-            onClick={copyToClipboard}
-            className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all"
-          >
-            Copy Form Data
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function NavigationFooter({ step, onBack, onNext }: {
+function NavigationFooter({ step, onBack, onNext, submitting }: {
   step: ActiveStep
   onBack: () => void
   onNext: () => void
+  submitting: boolean
 }) {
   return (
     <div className="w-full mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
       <button
         type="button"
         onClick={onBack}
-        disabled={step === 1}
+        disabled={step === 1 || submitting}
         className={`flex items-center gap-2 font-bold py-2 px-4 transition-colors ${
-          step === 1
+          step === 1 || submitting
             ? 'text-outline cursor-not-allowed'
             : 'text-foreground hover:text-on-tertiary-container'
         }`}
@@ -226,11 +194,12 @@ function NavigationFooter({ step, onBack, onNext }: {
       <button
         type="button"
         onClick={onNext}
-        className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
+        disabled={submitting}
+        className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all disabled:opacity-75 disabled:cursor-not-allowed disabled:scale-100"
       >
         {step === 4 ? 'Complete Submission' : 'Next Step'}
-        <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-          arrow_forward
+        <span className={`material-symbols-outlined transition-transform ${submitting ? 'animate-spin' : 'group-hover:translate-x-1'}`}>
+          {submitting ? 'progress_activity' : 'arrow_forward'}
         </span>
       </button>
     </div>
