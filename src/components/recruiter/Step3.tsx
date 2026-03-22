@@ -27,7 +27,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Capital Structure"
-          question="Where is the company in its funding journey?"
+          question={<>Where is the company in its <span className="text-on-tertiary-container">funding</span> journey?</>}
           description="Manage risk expectations and trajectory transparency."
         />
         <div className="md:col-span-7 space-y-3">
@@ -63,7 +63,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Contribution"
-          question="What kind of impact would I make in my first 6 months?"
+          question={<>What kind of <span className="text-on-tertiary-container">impact would I make</span> in my first 6 months?</>}
           description="Help define my legacy and technical ownership."
         />
         <div className="md:col-span-7">
@@ -84,8 +84,8 @@ export default function Step3({ formData, onChange }: Step3Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Tech Stack"
-          question="What's your primary tech stack?"
-          description="Share the languages, frameworks, and tools the team works with day-to-day."
+          question={<>What&apos;s your primary <span className="text-on-tertiary-container">tech stack</span>?</>}
+          description="Optional — Share the languages, frameworks, and tools the team works with day-to-day."
         />
         <div className="md:col-span-7">
           <input

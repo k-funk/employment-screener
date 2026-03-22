@@ -1,10 +1,13 @@
+import { ReactNode } from 'react'
+
+
 export default function QuestionHeader({
   topic,
   question,
   description,
 }: {
   topic: string
-  question: string
+  question: ReactNode
   description?: string
 }) {
   return (

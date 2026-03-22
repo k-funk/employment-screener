@@ -15,8 +15,8 @@ export default function Step4({ formData, onChange }: Step4Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Anything Else"
-          question="Is there anything else you'd like me to know?"
-          description="Optional — share context, constraints, or anything that didn't fit above."
+          question={<>Is there <span className="text-on-tertiary-container">anything else</span> you&apos;d like me to know?</>}
+          description="Optional — Share context, constraints, or anything that didn't fit above."
         />
         <div className="md:col-span-7">
           <textarea
@@ -31,7 +31,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Human Check"
-          question="What is 10 + 5?"
+          question={<>What is <span className="text-on-tertiary-container">10 + 5</span>?</>}
         />
         <div className="md:col-span-7">
           <input

@@ -22,7 +22,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Org Size"
-          question="How large is the engineering team?"
+          question={<>How large is the <span className="text-on-tertiary-container">engineering</span> team?</>}
           description="Quantify the current department size to help us understand the scope of the role."
         />
         <div className="md:col-span-7">
@@ -45,7 +45,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Hierarchy"
-          question="Management layers between an IC and the CTO?"
+          question={<>Management <span className="text-on-tertiary-container">layers</span> between the average IC and the CTO?</>}
           description="This gauges the flatness of your organization and decision-making speed."
         />
         <div className="md:col-span-7">
@@ -74,7 +74,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Presence"
-          question="What's the face-time situation?"
+          question={<>What&apos;s the <span className="text-on-tertiary-container">face-time</span> situation?</>}
           description="Define the balance between remote flexibility and in-person collaboration."
         />
         <div className="md:col-span-7 space-y-4">

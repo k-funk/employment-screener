@@ -13,7 +13,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Your Name"
-          question="First, what's your name?"
+          question={<>First, what&apos;s your <span className="text-on-tertiary-container">name</span>?</>}
         />
         <div className="md:col-span-7">
           <input
@@ -29,7 +29,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Email"
-          question="And the best email to reach you?"
+          question={<>And the best <span className="text-on-tertiary-container">email</span> to reach you?</>}
         />
         <div className="md:col-span-7">
           <input
@@ -45,7 +45,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Organization"
-          question="Great to meet you! Who are you representing today?"
+          question={<>What <span className="text-on-tertiary-container">org</span> are you representing today?</>}
         />
         <div className="md:col-span-7">
           <input
@@ -61,7 +61,8 @@ export default function Step1({ formData, onChange }: Step1Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Company URL"
-          question="Got a link to their website? (optional)"
+          question={<>Got a <span className="text-on-tertiary-container">link</span> to their website?</>}
+          description="Optional"
         />
         <div className="md:col-span-7">
           <input
@@ -77,7 +78,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Industry"
-          question="And what field are they making waves in?"
+          question={<>And what <span className="text-on-tertiary-container">field</span> are they making waves in?</>}
         />
         <div className="md:col-span-7">
           <input
@@ -93,7 +94,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Employment Type"
-          question="What type of employment is this?"
+          question={<>What <span className="text-on-tertiary-container">type of employment</span> is this?</>}
         />
         <div className="md:col-span-7">
           <div className="grid grid-cols-2 gap-4">
