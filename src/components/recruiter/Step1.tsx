@@ -48,7 +48,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
           question="What structure are you looking to explore?"
         />
         <div className="md:col-span-7">
-          <div className="grid grid-cols-2 gap-4 max-w-xl">
+          <div className="grid grid-cols-2 gap-4">
             {(['FT', 'PT'] as const).map((type) => {
               const selected = formData.employmentType === type
               return (

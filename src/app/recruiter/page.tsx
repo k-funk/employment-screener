@@ -53,7 +53,7 @@ function validate(step: Exclude<Step, 'done'>, data: RecruiterFormData): string 
       return
     }
     case 4: {
-      if (data.verificationAnswer.trim() !== VERIFICATION_ANSWER) return "Incorrect. Hint: it's a simple math problem."
+      if (data.verificationAnswer.trim() !== VERIFICATION_ANSWER) return "Incorrect human check. Hint: it's a simple math problem."
       return
     }
     default:
@@ -80,11 +80,7 @@ export default function RecruiterPage() {
       return
     }
 
-    if (step === 4) {
-      setStep('done')
-    } else {
-      setStep(((step as number) + 1) as Step)
-    }
+    setStep(step === 4 ? 'done' : ((step as number) + 1) as Step)
   }
 
   const handleBack = () => {
@@ -97,7 +93,6 @@ export default function RecruiterPage() {
 
   const stepNum = step as number
   const section = SECTIONS[stepNum - 1]
-  const isStep1 = step === 1
 
   return (
     <section className="w-full">
@@ -108,66 +103,82 @@ export default function RecruiterPage() {
           totalSteps={4}
         />
 
-        {/* Step 1 Hero Header */}
-        {isStep1 && (
-          <header className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 w-full max-w-7xl">
-            <div className="md:col-span-8">
-              <h1 className="text-5xl md:text-6xl font-extrabold font-headline tracking-tight text-foreground leading-[1.1] mb-6">
-                Let&apos;s see if we&apos;re a great fit.
-              </h1>
-              <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-                Tailoring this experience starts with understanding your goals. Providing these details
-                helps curate the most relevant case studies and metrics for your review.
-              </p>
-            </div>
-          </header>
-        )}
+        <StepContent step={step} formData={formData} onChange={onChange} />
 
-        {/* Step Content */}
-        <div className="space-y-16 w-full max-w-7xl">
-          {(() => {
-            switch (step) {
-              case 1: return <Step1 formData={formData} onChange={onChange} />
-              case 2: return <Step2 formData={formData} onChange={onChange} />
-              case 3: return <Step3 formData={formData} onChange={onChange} />
-              case 4: return <Step4 formData={formData} onChange={onChange} />
-              default: return step satisfies never
-            }
-          })()}
-        </div>
+        <NavigationFooter step={stepNum as Exclude<Step, 'done'>} onBack={handleBack} onNext={handleNext} />
 
-        {/* Navigation */}
-        <div className="w-full mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
-          <button
-            type="button"
-            onClick={handleBack}
-            disabled={step === 1}
-            className={`flex items-center gap-2 font-bold py-2 px-4 transition-colors ${
-              step === 1
-                ? 'text-outline cursor-not-allowed'
-                : 'text-foreground hover:text-on-tertiary-container'
-            }`}
-          >
-            <span className="material-symbols-outlined">arrow_back</span>
-            Back
-          </button>
-          <div className="flex flex-col items-end gap-1">
-            <button
-              type="button"
-              onClick={handleNext}
-              className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
-            >
-              {step === 4 ? 'Complete Submission' : 'Next Step'}
-              <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-                arrow_forward
-              </span>
-            </button>
-
-          </div>
-        </div>
-        {/* Validation error */}
         {error && <p className="w-full text-right text-sm font-medium text-error mt-3">{error}</p>}
       </PageContainer>
     </section>
+  )
+}
+
+function StepContent({ step, formData, onChange }: {
+  step: Exclude<Step, 'done'>
+  formData: RecruiterFormData
+  onChange: (updates: Partial<RecruiterFormData>) => void
+}) {
+  return (
+    <>
+      {step === 1 && (
+        <header className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
+          <div className="md:col-span-8">
+            <h1 className="text-5xl font-extrabold font-headline tracking-tight text-foreground leading-[1.1] mb-6">
+              Let&apos;s see if we&apos;re a great fit.
+            </h1>
+            <p className="text-lg text-on-surface-variant leading-relaxed">
+              Tailoring this experience starts with understanding your goals. Providing these details
+              helps curate the most relevant case studies and metrics for your review.
+            </p>
+          </div>
+        </header>
+      )}
+
+      <div className="space-y-16 w-full">
+        {(() => {
+          switch (step) {
+            case 1: return <Step1 formData={formData} onChange={onChange} />
+            case 2: return <Step2 formData={formData} onChange={onChange} />
+            case 3: return <Step3 formData={formData} onChange={onChange} />
+            case 4: return <Step4 formData={formData} onChange={onChange} />
+            default: return step satisfies never
+          }
+        })()}
+      </div>
+    </>
+  )
+}
+
+function NavigationFooter({ step, onBack, onNext }: {
+  step: Exclude<Step, 'done'>
+  onBack: () => void
+  onNext: () => void
+}) {
+  return (
+    <div className="w-full mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
+      <button
+        type="button"
+        onClick={onBack}
+        disabled={step === 1}
+        className={`flex items-center gap-2 font-bold py-2 px-4 transition-colors ${
+          step === 1
+            ? 'text-outline cursor-not-allowed'
+            : 'text-foreground hover:text-on-tertiary-container'
+        }`}
+      >
+        <span className="material-symbols-outlined">arrow_back</span>
+        Back
+      </button>
+      <button
+        type="button"
+        onClick={onNext}
+        className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all"
+      >
+        {step === 4 ? 'Complete Submission' : 'Next Step'}
+        <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
+          arrow_forward
+        </span>
+      </button>
+    </div>
   )
 }

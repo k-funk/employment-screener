@@ -32,7 +32,7 @@ function PrimarySection({
         <div className="mb-16">
           <h2 className={`font-headline font-extrabold text-4xl mb-4 ${titleClass}`}>{title}</h2>
           <div className="w-24 h-1.5 cta-gradient rounded-full mb-4" />
-          <p className={`text-lg max-w-md ${blurbClass}`}>{blurb}</p>
+          <p className={`text-lg max-w-lg ${blurbClass}`}>{blurb}</p>
         </div>
         {children}
       </PageContainer>
