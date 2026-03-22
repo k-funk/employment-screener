@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
 import LinkedInIcon from '@/components/icons/LinkedInIcon'
 import WorkExperience from '@/components/WorkExperience'
+import PageContainer from '@/components/PageContainer'
 
 export default function ResumePage() {
   return (
@@ -27,22 +28,23 @@ function PrimarySection({
   const blurbClass = variant === 'inverse' ? 'text-primary-fixed-dim' : 'text-secondary'
   return (
     <section className={sectionClass}>
-      <div className="max-w-7xl mx-auto px-8">
+      <PageContainer>
         <div className="mb-16">
           <h2 className={`font-headline font-extrabold text-4xl mb-4 ${titleClass}`}>{title}</h2>
           <div className="w-24 h-1.5 cta-gradient rounded-full mb-4" />
           <p className={`text-lg max-w-md ${blurbClass}`}>{blurb}</p>
         </div>
         {children}
-      </div>
+      </PageContainer>
     </section>
   )
 }
 
 function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-8 py-12 md:py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <div className="w-full">
+      <PageContainer className="py-12 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse" />
@@ -116,8 +118,9 @@ function Hero() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        </div>
+      </PageContainer>
+    </div>
   )
 }
 
@@ -388,13 +391,13 @@ function Education() {
 
 function CTA() {
   return (
-    <section className="max-w-7xl mx-auto pt-16 pb-8 text-center">
+    <PageContainer className="pt-16 pb-8 text-center">
       <Link
         href="/recruiter"
         className="cta-gradient text-tertiary px-10 py-5 rounded-xl font-extrabold text-xl shadow-lg active:scale-95 transition-all inline-block"
       >
         Check for Fit
       </Link>
-    </section>
+    </PageContainer>
   )
 }

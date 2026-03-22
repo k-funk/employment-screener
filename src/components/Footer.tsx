@@ -1,10 +1,11 @@
 import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
 import LinkedInIcon from '@/components/icons/LinkedInIcon'
+import PageContainer from '@/components/PageContainer'
 
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-outline-variant/20 w-full mt-auto">
-      <div className="flex flex-col md:flex-row justify-between items-center px-12 py-8 max-w-7xl mx-auto gap-6">
+      <PageContainer className="flex flex-col md:flex-row justify-between items-center py-8 gap-6">
         <div className="font-headline font-bold text-xs tracking-wide uppercase text-secondary">
           © {new Date().getFullYear()} Kevin Funk
         </div>
@@ -35,7 +36,7 @@ export default function Footer() {
             LinkedIn
           </a>
         </div>
-      </div>
+      </PageContainer>
     </footer>
   )
 }

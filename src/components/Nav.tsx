@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import PageContainer from '@/components/PageContainer'
 
 export default function Nav() {
   const [dark, setDark] = useState(false)
@@ -24,7 +25,7 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-nav backdrop-blur-xl shadow-[0_20px_40px_rgba(19,27,46,0.06)]">
-      <div className="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+      <PageContainer className="flex justify-between items-center w-full py-4">
         <Link
           href="/"
           className="text-2xl font-extrabold tracking-tighter text-foreground font-headline"
@@ -62,7 +63,7 @@ export default function Nav() {
         >
           <span className="material-symbols-outlined">dark_mode</span>
         </button>
-      </div>
+      </PageContainer>
       <div className="bg-surface-container-low h-px w-full" />
     </nav>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import PageContainer from '@/components/PageContainer'
 import ProgressBar from '@/components/recruiter/ProgressBar'
 import Step1 from '@/components/recruiter/Step1'
 import Step2 from '@/components/recruiter/Step2'
@@ -97,7 +98,7 @@ export default function RecruiterPage() {
   const isStep1 = step === 1
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-12 md:py-20">
+    <PageContainer className="py-12 md:py-20">
       <ProgressBar
         sectionLabel={section.label}
         sectionName={section.name}
@@ -165,6 +166,6 @@ export default function RecruiterPage() {
           </span>
         </button>
       </div>
-    </div>
+    </PageContainer>
   )
 }
