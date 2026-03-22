@@ -11,7 +11,7 @@ export default function ProgressBar({ sectionName, step, totalSteps }: ProgressB
         <h1 className="font-headline text-3xl font-extrabold tracking-tight text-foreground">
           {sectionName}
         </h1>
-        <span className="font-label text-[0.75rem] uppercase tracking-widest font-bold text-on-secondary-container mt-1">
+        <span className="font-label text-[0.75rem] uppercase tracking-widest font-bold text-on-surface-variant mt-1">
           Step {step} of {totalSteps}
         </span>
       </div>

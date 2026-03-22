@@ -75,7 +75,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container outline-none px-5 py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
           />
           <div className="flex justify-between items-center mt-4">
-            <span className="text-[0.65rem] font-bold text-on-secondary-container/50 uppercase tracking-widest">
+            <span className="text-[0.65rem] font-bold text-on-surface-variant/50 uppercase tracking-widest">
               {wordCount} / 500 Words
             </span>
           </div>

@@ -115,7 +115,7 @@ export default function Step1({ formData, onChange }: Step1Props) {
                   <span className={`font-headline text-3xl font-extrabold mb-2 ${selected ? 'text-on-tertiary-container' : 'text-foreground'}`}>
                     {type}
                   </span>
-                  <span className={`font-label text-[10px] font-bold uppercase tracking-tighter ${selected ? 'text-on-tertiary-container' : 'text-on-secondary-container'}`}>
+                  <span className={`font-label text-[10px] font-bold uppercase tracking-tighter ${selected ? 'text-on-tertiary-container' : 'text-on-surface-variant'}`}>
                     {type === 'FT' ? 'Full Time' : 'Part Time'}
                   </span>
                 </button>

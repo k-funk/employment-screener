@@ -36,7 +36,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
               inputMode="numeric"
               className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container text-2xl font-headline font-bold py-4 px-5 transition-all placeholder:text-outline-variant outline-none"
             />
-            <div className="absolute right-5 top-1/2 -translate-y-1/2 text-on-secondary-container font-label font-bold text-xs uppercase tracking-widest">
+            <div className="absolute right-5 top-1/2 -translate-y-1/2 text-on-surface-variant font-label font-bold text-xs uppercase tracking-widest">
               Engineers
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 flex items-center justify-center">
-                      <span className={`material-symbols-outlined ${selected ? 'text-on-tertiary-container' : 'text-on-secondary-container'}`}>
+                      <span className={`material-symbols-outlined ${selected ? 'text-on-tertiary-container' : 'text-on-surface-variant'}`}>
                         {opt.icon}
                       </span>
                     </div>
@@ -103,7 +103,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
                       <div className={`font-headline font-bold ${selected ? 'text-on-tertiary-container' : 'text-foreground'}`}>
                         {opt.label}
                       </div>
-                      <div className={`text-xs text-on-secondary-container font-medium ${selected ? 'text-on-tertiary-container' : ''}`}>
+                      <div className={`text-xs text-on-surface-variant font-medium ${selected ? 'text-on-tertiary-container' : ''}`}>
                         {opt.sub}
                       </div>
                     </div>
