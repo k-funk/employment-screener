@@ -9,38 +9,16 @@ interface Step2Props {
 
 const HIERARCHY = ['1', '2', '3', '4', '5', '6+']
 
-const PRESENCE_OPTIONS = [
-  {
-    value: 'remote' as const,
-    label: 'Fully Remote',
-    sub: 'Global talent, zero mandatory travel',
-    icon: 'public',
-    iconBg: 'bg-secondary-container',
-    iconColor: 'text-on-secondary-container',
-  },
-  {
-    value: 'hybrid' as const,
-    label: 'Hybrid (Default)',
-    sub: 'Occasional office presence required',
-    icon: 'domain',
-    iconBg: 'bg-tertiary-fixed',
-    iconColor: 'text-on-tertiary-fixed',
-  },
-  {
-    value: 'onsite' as const,
-    label: 'On-site Mandatory',
-    sub: 'Daily collaboration from the main hub',
-    icon: 'groups',
-    iconBg: 'bg-secondary-container',
-    iconColor: 'text-on-secondary-container',
-  },
+const PRESENCE_OPTIONS: { value: 'remote' | 'hybrid' | 'onsite'; label: string; sub: string; icon: string }[] = [
+  { value: 'remote', label: 'Fully Remote', sub: 'Global talent, zero mandatory travel', icon: 'public' },
+  { value: 'hybrid', label: 'Hybrid', sub: 'Occasional office presence required', icon: 'domain' },
+  { value: 'onsite', label: 'On-site Mandatory', sub: 'Daily collaboration from the main hub', icon: 'groups' },
 ]
 
 
 export default function Step2({ formData, onChange }: Step2Props) {
   return (
     <>
-      {/* Org Size */}
       <QuestionRow>
         <QuestionHeader
           topic="Org Size"
@@ -64,7 +42,6 @@ export default function Step2({ formData, onChange }: Step2Props) {
         </div>
       </QuestionRow>
 
-      {/* Hierarchy */}
       <QuestionRow>
         <QuestionHeader
           topic="Hierarchy"
@@ -94,7 +71,6 @@ export default function Step2({ formData, onChange }: Step2Props) {
         </div>
       </QuestionRow>
 
-      {/* Presence */}
       <QuestionRow>
         <QuestionHeader
           topic="Presence"
@@ -117,10 +93,8 @@ export default function Step2({ formData, onChange }: Step2Props) {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div
-                      className={`w-10 h-10 rounded-full ${opt.iconBg} flex items-center justify-center`}
-                    >
-                      <span className={`material-symbols-outlined ${opt.iconColor}`}>
+                    <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+                      <span className="material-symbols-outlined text-on-secondary-container">
                         {opt.icon}
                       </span>
                     </div>
@@ -144,7 +118,6 @@ export default function Step2({ formData, onChange }: Step2Props) {
               )
             })}
           </div>
-
         </div>
       </QuestionRow>
     </>

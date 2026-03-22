@@ -21,7 +21,6 @@ export default function Step3({ formData, onChange }: Step3Props) {
 
   return (
     <>
-      {/* Funding Stage */}
       <QuestionRow>
         <QuestionHeader
           topic="Capital Structure"
@@ -58,7 +57,6 @@ export default function Step3({ formData, onChange }: Step3Props) {
         </div>
       </QuestionRow>
 
-      {/* First 6 Months */}
       <QuestionRow>
         <QuestionHeader
           topic="Strategic Contribution"
@@ -85,7 +83,6 @@ export default function Step3({ formData, onChange }: Step3Props) {
         </div>
       </QuestionRow>
 
-      {/* Tech Stack */}
       <QuestionRow>
         <QuestionHeader
           topic="Tech Stack"
