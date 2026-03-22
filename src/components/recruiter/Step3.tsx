@@ -59,7 +59,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
 
       <QuestionRow>
         <QuestionHeader
-          topic="Strategic Contribution"
+          topic="Contribution"
           question="What kind of impact would I make in my first 6 months?"
           description="Help define my legacy and technical ownership."
         />
@@ -68,7 +68,7 @@ export default function Step3({ formData, onChange }: Step3Props) {
             value={formData.firstSixMonths}
             onChange={(e) => onChange({ firstSixMonths: e.target.value })}
             placeholder="Describe the key initiatives and the specific legacy that I would..."
-            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container outline-none py-2 font-body text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container outline-none py-4 text-xl font-medium text-foreground placeholder:text-outline-variant resize-none min-h-[160px] transition-all"
           />
           <div className="flex justify-between items-center mt-4">
             <span className="text-[0.65rem] font-bold text-on-secondary-container/50 uppercase tracking-widest">

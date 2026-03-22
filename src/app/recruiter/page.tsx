@@ -35,7 +35,7 @@ const SECTIONS = [
 function validate(step: number, data: RecruiterFormData): string | null {
   if (step === 1) {
     if (!data.companyName.trim()) return 'Please enter your company name.'
-    if (!data.industry) return 'Please select an industry.'
+    if (!data.industry.trim()) return 'Please select an industry.'
     if (!data.employmentType) return 'Please select Full Time or Part Time.'
   }
   if (step === 2) {
