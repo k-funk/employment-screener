@@ -60,6 +60,22 @@ export default function Step1({ formData, onChange }: Step1Props) {
 
       <QuestionRow>
         <QuestionHeader
+          topic="Company URL"
+          question="Got a link to their website? (optional)"
+        />
+        <div className="md:col-span-7">
+          <input
+            type="url"
+            value={formData.organizationUrl ?? ''}
+            onChange={(e) => onChange({ organizationUrl: e.target.value })}
+            placeholder="https://company.com"
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+          />
+        </div>
+      </QuestionRow>
+
+      <QuestionRow>
+        <QuestionHeader
           topic="Industry"
           question="And what field are they making waves in?"
         />
@@ -76,8 +92,8 @@ export default function Step1({ formData, onChange }: Step1Props) {
 
       <QuestionRow>
         <QuestionHeader
-          topic="Engagement Model"
-          question="What structure are you looking to explore?"
+          topic="Employment Type"
+          question="What type of employment is this?"
         />
         <div className="md:col-span-7">
           <div className="grid grid-cols-2 gap-4">

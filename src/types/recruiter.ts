@@ -1,7 +1,9 @@
+// NOTE: See note in submitForm.ts about updating the APPS_SCRIPT_URL when changing the data sent.
 export interface RecruiterFormData {
   name: string
   email: string
   organization: string
+  organizationUrl?: string
   industry: string
   employmentType: 'FT' | 'PT' | ''
   orgSize: string
