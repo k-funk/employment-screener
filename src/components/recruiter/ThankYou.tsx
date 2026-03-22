@@ -24,14 +24,6 @@ export default function ThankYou() {
           >
             View Resume
           </Link>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-block"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Email Directly
-          </a>
         </div>
       </div>
     </div>

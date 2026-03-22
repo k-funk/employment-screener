@@ -3,7 +3,7 @@ import QuestionHeader from '@/components/recruiter/QuestionHeader'
 import QuestionRow from '@/components/recruiter/QuestionRow'
 import QuestionContent from '@/components/recruiter/QuestionContent'
 
-export const VERIFICATION_ANSWER = '15'
+export const VERIFICATION_ANSWER = '11'
 
 interface Step4Props {
   formData: RecruiterFormData
@@ -32,7 +32,7 @@ export default function Step4({ formData, onChange }: Step4Props) {
       <QuestionRow>
         <QuestionHeader
           topic="Human Check"
-          question={<>What is <span className="text-on-tertiary-container">10 + 5</span>?</>}
+          question={<>What is <span className="text-on-tertiary-container">6 + 5</span>?</>}
         />
         <QuestionContent>
           <input

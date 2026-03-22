@@ -89,21 +89,21 @@ export default function Step2({ formData, onChange }: Step2Props) {
                   onClick={() => onChange({ presence: opt.value })}
                   className={`p-5 rounded-xl bg-surface-container-low border-2 transition-all flex items-center justify-between text-left ${
                     selected
-                      ? 'border-on-tertiary-container bg-surface-selected'
+                      ? 'border-on-tertiary-container bg-surface-selected text-on-tertiary-container'
                       : 'border-transparent'
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+                    <div className="w-10 h-10 flex items-center justify-center">
                       <span className="material-symbols-outlined text-on-secondary-container">
                         {opt.icon}
                       </span>
                     </div>
                     <div>
-                      <div className="font-headline font-bold text-foreground">
+                      <div className={`font-headline font-bold ${selected ? 'text-on-tertiary-container' : 'text-foreground'}`}>
                         {opt.label}
                       </div>
-                      <div className="text-xs text-on-secondary-container font-medium">
+                      <div className={`text-xs text-on-secondary-container font-medium ${selected ? 'text-on-tertiary-container' : ''}`}>
                         {opt.sub}
                       </div>
                     </div>

@@ -41,11 +41,11 @@ export default function Step3({ formData, onChange }: Step3Props) {
                 onClick={() => onChange({ capitalStructure: stage })}
                 className={`w-full p-5 rounded-xl bg-surface-container-low border-2 transition-all flex items-center justify-between text-left ${
                   selected
-                    ? 'border-on-tertiary-container bg-surface-selected'
+                    ? 'border-on-tertiary-container bg-surface-selected text-on-tertiary-container'
                     : 'border-transparent'
                 }`}
               >
-                <span className="font-headline font-bold text-foreground">
+                <span className={`font-headline font-bold ${selected ? 'text-on-tertiary-container' : 'text-foreground'}`}>
                   {stage}
                 </span>
                 <span

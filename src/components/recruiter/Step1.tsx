@@ -108,14 +108,14 @@ export default function Step1({ formData, onChange }: Step1Props) {
                   onClick={() => onChange({ employmentType: type })}
                   className={`relative flex flex-col items-center justify-center p-8 rounded-xl bg-surface-container-low border-2 transition-all ${
                     selected
-                      ? 'border-on-tertiary-container'
+                      ? 'border-on-tertiary-container text-on-tertiary-container'
                       : 'border-transparent hover:border-on-tertiary-container'
                   }`}
                 >
-                  <span className="font-headline text-3xl font-extrabold text-foreground mb-2">
+                  <span className={`font-headline text-3xl font-extrabold mb-2 ${selected ? 'text-on-tertiary-container' : 'text-foreground'}`}>
                     {type}
                   </span>
-                  <span className="font-label text-[10px] font-bold uppercase tracking-tighter text-on-secondary-container">
+                  <span className={`font-label text-[10px] font-bold uppercase tracking-tighter ${selected ? 'text-on-tertiary-container' : 'text-on-secondary-container'}`}>
                     {type === 'FT' ? 'Full Time' : 'Part Time'}
                   </span>
                 </button>
