@@ -95,7 +95,7 @@ export default function Step2({ formData, onChange }: Step2Props) {
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-on-secondary-container">
+                      <span className={`material-symbols-outlined ${selected ? 'text-on-tertiary-container' : 'text-on-secondary-container'}`}>
                         {opt.icon}
                       </span>
                     </div>

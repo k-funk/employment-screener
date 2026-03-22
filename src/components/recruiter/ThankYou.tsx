@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { EMAIL } from '@/lib/contact'
 
 export default function ThankYou() {
   return (

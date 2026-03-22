@@ -37,7 +37,7 @@ export default function SubmissionError({ onRetry, formData, submitting }: Submi
             className="cta-gradient text-tertiary px-8 py-4 rounded-xl font-extrabold text-lg shadow-lg active:scale-95 transition-all disabled:opacity-75 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {submitting
-              ? <><span className="material-symbols-outlined animate-spin">progress_activity</span> Retrying...</>
+              ? <>Retrying <span className="material-symbols-outlined animate-spin">progress_activity</span></>
               : 'Try Again'
             }
           </button>

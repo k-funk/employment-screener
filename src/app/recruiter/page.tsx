@@ -204,7 +204,10 @@ function NavigationFooter({ step, onBack, onNext, submitting }: {
       >
         {step === 4 ? 'Complete Submission' : 'Next Step'}
         <span className={`material-symbols-outlined transition-transform ${submitting ? 'animate-spin' : 'group-hover:translate-x-1'}`}>
-          {submitting ? 'progress_activity' : 'arrow_forward'}
+          {(() => {
+            if (submitting) return 'progress_activity'
+            return step === 4 ? 'send' : 'arrow_forward'
+          })()}
         </span>
       </button>
     </div>

@@ -82,6 +82,8 @@
     --color-on-surface: #f7f9fb;
     --color-on-surface-variant: #c6c5d4;
     --color-secondary: #c6c5d4;
+    --color-on-secondary-container: #546580;
+    --color-secondary-container: #d5e3fd;
 
     /* Surface hierarchy flipped for dark */
     --color-surface: #131b2e;
