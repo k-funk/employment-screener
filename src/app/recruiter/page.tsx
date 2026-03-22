@@ -98,8 +98,8 @@ export default function RecruiterPage() {
   const isStep1 = step === 1
 
   return (
-    <section>
-      <PageContainer className="py-12 md:py-20">
+    <section className="w-full">
+      <PageContainer className="py-12 md:py-20 flex flex-col items-center">
         <ProgressBar
           sectionLabel={section.label}
           sectionName={section.name}
@@ -139,7 +139,7 @@ export default function RecruiterPage() {
         )}
 
         {/* Navigation */}
-        <div className="w-full max-w-3xl mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
+        <div className="w-full mt-16 pt-8 flex justify-between items-center border-t border-outline-variant/20">
           <button
             type="button"
             onClick={handleBack}
