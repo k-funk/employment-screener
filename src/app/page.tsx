@@ -51,7 +51,7 @@ function Hero() {
         <div className="lg:col-span-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse" />
-            Available for Senior Roles
+            Available for Staff/Senior Roles
           </div>
           <h1 className="font-headline font-extrabold text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tighter leading-tight mb-8">
             Kevin Funk
