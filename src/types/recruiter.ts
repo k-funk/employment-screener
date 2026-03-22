@@ -1,4 +1,6 @@
 export interface RecruiterFormData {
+  name: string
+  email: string
   organization: string
   industry: string
   employmentType: 'FT' | 'PT' | ''

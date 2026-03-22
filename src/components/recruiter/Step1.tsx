@@ -12,6 +12,38 @@ export default function Step1({ formData, onChange }: Step1Props) {
     <>
       <QuestionRow>
         <QuestionHeader
+          topic="Your Name"
+          question="First, what's your name?"
+        />
+        <div className="md:col-span-7">
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => onChange({ name: e.target.value })}
+            placeholder="Full name"
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+          />
+        </div>
+      </QuestionRow>
+
+      <QuestionRow>
+        <QuestionHeader
+          topic="Email"
+          question="And the best email to reach you?"
+        />
+        <div className="md:col-span-7">
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => onChange({ email: e.target.value })}
+            placeholder="you@company.com"
+            className="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-on-tertiary-container py-4 text-xl font-medium transition-all placeholder:text-outline-variant"
+          />
+        </div>
+      </QuestionRow>
+
+      <QuestionRow>
+        <QuestionHeader
           topic="Organization"
           question="Great to meet you! Who are you representing today?"
         />

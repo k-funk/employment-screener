@@ -16,6 +16,8 @@ type Step = 1 | 2 | 3 | 4 | 'done' | 'submissionError'
 type ActiveStep = Exclude<Step, 'done' | 'submissionError'>
 
 const initialData: RecruiterFormData = {
+  name: '',
+  email: '',
   organization: '',
   industry: '',
   employmentType: '',
@@ -39,6 +41,9 @@ const SECTIONS = [
 function validate(step: ActiveStep, data: RecruiterFormData): string | undefined {
   switch (step) {
     case 1: {
+      if (!data.name.trim()) return 'Please enter your name.'
+      if (!data.email.trim()) return 'Please enter your email.'
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return 'Please enter a valid email address.'
       if (!data.organization.trim()) return 'Please enter your organization.'
       if (!data.industry.trim()) return 'Please select an industry.'
       if (!data.employmentType) return 'Please select Full Time or Part Time.'
@@ -65,7 +70,7 @@ function validate(step: ActiveStep, data: RecruiterFormData): string | undefined
 }
 
 export default function RecruiterPage() {
-  const [step, setStep] = useState<Step>('submissionError')
+  const [step, setStep] = useState<Step>(1)
   const [formData, setFormData] = useState<RecruiterFormData>(initialData)
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
