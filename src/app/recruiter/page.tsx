@@ -9,6 +9,7 @@ import Step3 from '@/components/recruiter/Step3'
 import Step4, { VERIFICATION_ANSWER } from '@/components/recruiter/Step4'
 import ThankYou from '@/components/recruiter/ThankYou'
 import { RecruiterFormData } from '@/types/recruiter'
+import { submitForm } from '@/lib/submitForm'
 
 type Step = 1 | 2 | 3 | 4 | 'done'
 
@@ -22,8 +23,8 @@ const initialData: RecruiterFormData = {
   capitalStructure: '',
   firstSixMonths: '',
   techStack: '',
-  verificationAnswer: '',
   additionalNotes: '',
+  verificationAnswer: '',
 }
 
 const SECTIONS = [
@@ -71,7 +72,7 @@ export default function RecruiterPage() {
     setError('')
   }
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (step === 'done') return
 
     const err = validate(step, formData)
@@ -80,7 +81,12 @@ export default function RecruiterPage() {
       return
     }
 
-    setStep(step === 4 ? 'done' : ((step as number) + 1) as Step)
+    if (step === 4) {
+      await submitForm(formData)
+      setStep('done')
+    } else {
+      setStep(((step as number) + 1) as Step)
+    }
   }
 
   const handleBack = () => {

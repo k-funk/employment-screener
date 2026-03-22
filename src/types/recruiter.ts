@@ -8,6 +8,6 @@ export interface RecruiterFormData {
   capitalStructure: string
   firstSixMonths: string
   techStack: string
-  verificationAnswer: string
   additionalNotes: string
+  verificationAnswer: string
 }
