@@ -356,7 +356,7 @@ function Education() {
               </p>
               <p className="text-primary-fixed-dim">Stanford University • 2018</p>
               <p className="text-xs text-primary-fixed-dim opacity-60 mt-1">
-                Previous study: San Francisco, CA (2014)
+                University of San Francisco, San Francisco, CA (2014)
               </p>
             </div>
             <div>
@@ -366,7 +366,9 @@ function Education() {
               <p className="font-bold text-surface-bright text-lg">
                 B.S., Visual Communication Design
               </p>
-              <p className="text-primary-fixed-dim">San Francisco State University • 2011</p>
+              <p className="text-primary-fixed-dim">
+                San Francisco State University (2011)
+              </p>
             </div>
           </div>
           <div className="space-y-8">
@@ -377,7 +379,9 @@ function Education() {
               <p className="font-bold text-surface-bright text-lg">
                 LAMP Fundamentals Certificate
               </p>
-              <p className="text-primary-fixed-dim">City College of San Francisco • 2013</p>
+              <p className="text-primary-fixed-dim">
+                City College of San Francisco (2013)
+              </p>
             </div>
             <div>
               <h4 className="font-label text-xs uppercase tracking-widest text-tertiary-fixed font-bold mb-4">
@@ -386,7 +390,8 @@ function Education() {
               <p className="font-bold text-surface-bright text-lg">
                 A.A.S., Air and Space Operations Technology
               </p>
-              <p className="text-primary-fixed-dim">Community College of the Air Force • 2008</p>
+              <p className="text-primary-fixed-dim">
+                Community College of the Air Force (2008)</p>
             </div>
           </div>
         </div>
