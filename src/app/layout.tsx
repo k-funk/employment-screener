@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, Manrope } from 'next/font/google'
-import { cookies } from 'next/headers'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -23,16 +22,22 @@ export const metadata: Metadata = {
     'Portfolio and recruiter intake for Kevin Funk, Senior Software Engineer with 13 years of experience.',
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = await cookies()
-  const isDark = cookieStore.get('theme')?.value === 'dark'
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable}${isDark ? ' dark' : ''}`}
+      className={`${inter.variable} ${manrope.variable}`}
     >
       <head>
+        {/*
+          * Inline script to apply dark mode before first paint (prevents FOUC).
+          * We previously read the `theme` cookie server-side via next/headers, but
+          * that API is incompatible with `output: 'export'` (static export for GitHub
+          * Pages). This synchronous inline script reads the same cookie client-side
+          * and adds the `dark` class to <html> before the browser paints — same effect,
+          * no server required. Nav.tsx still writes `document.cookie = 'theme=...'`.
+          */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var m=document.cookie.match(/(?:^|;\\s*)theme=([^;]*)/);if(m&&m[1]==='dark')document.documentElement.classList.add('dark')})()` }} />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           rel="stylesheet"
