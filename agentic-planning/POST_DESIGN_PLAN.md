@@ -124,7 +124,7 @@ Employment Screener — Build Plan
 
  Faithfully converted from
  google_stitch_design_plan/resume/code.html:
- - Hero: large "Kevin Funk" headline, "Senior Software
+ - Hero: large "Kevin Funk" headline, "Staff Software
  Engineer" subtitle, bio paragraphs, "Check for Fit" (→
  /recruiter) + "Download CV" buttons
  - Contact sidebar: email + GitHub

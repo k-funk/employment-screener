@@ -57,7 +57,7 @@ function Hero() {
             Kevin Funk
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-on-tertiary-container mb-6">
-            Senior Software Engineer
+            Staff Software Engineer
           </h2>
           <div className="flex flex-col gap-4 text-secondary mb-10">
             <p className="text-xl md:text-2xl leading-relaxed">

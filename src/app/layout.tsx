@@ -17,9 +17,9 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Kevin Funk — Senior Software Engineer',
+  title: 'Kevin Funk — Staff Software Engineer',
   description:
-    'Portfolio and recruiter intake for Kevin Funk, Senior Software Engineer with 13 years of experience.',
+    'Portfolio and recruiter intake for Kevin Funk, Staff Software Engineer with 13 years of experience.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
