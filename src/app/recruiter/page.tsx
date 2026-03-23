@@ -206,7 +206,7 @@ function NavigationFooter({ step, onBack, onNext, submitting }: {
         disabled={submitting}
         className="group flex items-center gap-3 bg-gradient-to-br from-[#4edea3] to-[#00ad78] text-on-tertiary font-headline font-extrabold px-10 py-4 rounded-xl ambient-shadow hover:scale-105 active:scale-95 transition-all disabled:opacity-75 disabled:cursor-not-allowed disabled:scale-100"
       >
-        {step === 4 ? 'Complete Submission' : 'Next Step'}
+        {step === 4 ? 'Submit' : 'Next Step'}
         <span className={`material-symbols-outlined transition-transform ${submitting ? 'animate-spin' : 'group-hover:translate-x-1'}`}>
           {(() => {
             if (submitting) return 'progress_activity'
