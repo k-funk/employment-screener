@@ -21,12 +21,12 @@ export default function WorkExperience({
 
   return (
     <div className="bg-surface-container-low p-8 md:p-10 rounded-3xl border border-outline-variant">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center md:gap-4 gap-1">
         <div>
           <h3 className="font-headline font-bold text-2xl text-foreground mb-1">{title}</h3>
           <p className="text-on-tertiary-container font-bold text-lg">{company}</p>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-start md:items-end">
           <span className="text-sm font-bold text-on-secondary-container bg-secondary-container px-4 py-1.5 rounded-full mb-2">
             {yearRange}
             <span className="ms-2 font-normal">

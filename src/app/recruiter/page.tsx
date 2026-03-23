@@ -45,7 +45,7 @@ function validate(step: ActiveStep, data: RecruiterFormData): string | undefined
       if (!data.email.trim()) return 'Please enter your email.'
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return 'Please enter a valid email address.'
       if (!data.organization.trim()) return 'Please enter your organization.'
-      if (!data.industry.trim()) return 'Please select an industry.'
+      if (!data.industry.trim()) return 'Please enter an industry.'
       if (!data.employmentType) return 'Please select Full Time or Part Time.'
       return
     }
