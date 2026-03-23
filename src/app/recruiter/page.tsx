@@ -92,6 +92,8 @@ export default function RecruiterPage() {
     }
   }
 
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'instant' })
+
   const handleNext = async () => {
     if (step === 'done' || step === 'submissionError') return
 
@@ -106,12 +108,14 @@ export default function RecruiterPage() {
     } else {
       setStep(((step as number) + 1) as Step)
     }
+    scrollToTop()
   }
 
   const handleBack = () => {
     if (step === 1 || step === 'done' || step === 'submissionError') return
     setStep(((step as number) - 1) as Step)
     setError('')
+    scrollToTop()
   }
 
   if (step === 'done') return <ThankYou />
