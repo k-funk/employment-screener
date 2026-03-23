@@ -12,6 +12,7 @@ export interface RecruiterFormData {
   capitalStructure: string
   firstSixMonths: string
   techStack: string
+  compensation: string
   additionalNotes: string
   verificationAnswer: string
 }

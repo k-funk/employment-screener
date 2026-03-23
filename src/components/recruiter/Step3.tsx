@@ -98,6 +98,23 @@ export default function Step3({ formData, onChange }: Step3Props) {
           />
         </QuestionContent>
       </QuestionRow>
+
+      <QuestionRow>
+        <QuestionHeader
+          topic="Compensation"
+          question={<>What&apos;s the <span className="text-on-tertiary-container">compensation</span> for this role?</>}
+          description="Optional — Include salary range and equity (e.g. % of company or option pool)."
+        />
+        <QuestionContent>
+          <input
+            type="text"
+            value={formData.compensation}
+            onChange={(e) => onChange({ compensation: e.target.value })}
+            placeholder="e.g. $180–220k base, 0.15% equity..."
+            className="w-full bg-surface-container-low rounded-xl border-2 border-transparent focus:border-on-tertiary-container px-5 py-4 text-xl font-medium transition-all placeholder:text-outline-variant outline-none"
+          />
+        </QuestionContent>
+      </QuestionRow>
     </>
   )
 }

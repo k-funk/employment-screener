@@ -27,6 +27,7 @@ const initialData: RecruiterFormData = {
   capitalStructure: '',
   firstSixMonths: '',
   techStack: '',
+  compensation: '',
   additionalNotes: '',
   verificationAnswer: '',
 }
