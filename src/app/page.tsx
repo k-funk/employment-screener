@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 import Link from 'next/link'
 import { LINKEDIN_URL, GITHUB_URL, EMAIL } from '@/lib/contact'
+import { BASE_PATH } from '../../next.config'
 import LinkedInIcon from '@/components/icons/LinkedInIcon'
 import WorkExperience from '@/components/WorkExperience'
 import PageContainer from '@/components/PageContainer'
@@ -76,7 +77,7 @@ function Hero() {
               {RECRUITER_FORM_CTA_TEXT}
             </Link>
             <a
-              href="/kfunk_resume_2026.pdf"
+              href={`${BASE_PATH}/kfunk_resume_2026.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-filled px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all inline-flex items-center gap-2"

@@ -3,6 +3,7 @@ import { Inter, Manrope } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { BASE_PATH } from '../../next.config'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -38,11 +39,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           * no server required. Nav.tsx still writes `document.cookie = 'theme=...'`.
           */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){var m=document.cookie.match(/(?:^|;\\s*)theme=([^;]*)/);if(m&&m[1]==='dark')document.documentElement.classList.add('dark')})()` }} />
-        <link rel="icon" href="/employment-screener/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/employment-screener/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/employment-screener/favicon-32x32.png" />
-        <link rel="apple-touch-icon" href="/employment-screener/apple-touch-icon.png" />
-        <link rel="manifest" href="/employment-screener/site.webmanifest" />
+        <link rel="icon" href={`${BASE_PATH}/favicon.ico`} sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${BASE_PATH}/favicon-16x16.png`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${BASE_PATH}/favicon-32x32.png`} />
+        <link rel="apple-touch-icon" href={`${BASE_PATH}/apple-touch-icon.png`} />
+        <link rel="manifest" href={`${BASE_PATH}/site.webmanifest`} />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           rel="stylesheet"

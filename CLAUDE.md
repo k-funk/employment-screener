@@ -16,7 +16,7 @@ Use Tailwind utility classes with the custom design tokens in `tailwind.config.t
 - `src/types/recruiter.ts` — RecruiterFormData interface
 - `src/lib/submitForm.ts` — submits form to Google Apps Script endpoint
 - `src/lib/contact.ts` — shared contact constants (email, GitHub, LinkedIn)
-- `next.config.ts` — `output: 'export'`, `images: { unoptimized: true }`, `basePath: '/employment-screener'`
+- `next.config.ts` — `output: 'export'`, `images: { unoptimized: true }`, `basePath: '/employment-screener'`; also exports `BASE_PATH` constant used by layout/pages
 - `public/kfunk_resume_2026.pdf` — downloadable CV
 - `public/favicon.ico` + related PNG/manifest files — favicon set
 
@@ -38,7 +38,7 @@ Human verification answer: **11** (6+5). `verificationAnswer` is excluded from f
 pnpm run deploy   # next build → touch out/.nojekyll → gh-pages -d out -t
 ```
 
-Pushes `out/` to the `gh-pages` branch. All favicon/asset hrefs use the hardcoded `/employment-screener/` prefix since plain `<link>` tags don't get `basePath` applied automatically.
+Pushes `out/` to the `gh-pages` branch. Plain `<link>` tags and `<a>` hrefs don't get `basePath` applied automatically — use the exported `BASE_PATH` constant from `next.config.ts` to prefix asset paths (e.g. favicons, PDF links).
 
 ## Change History
 
@@ -65,3 +65,10 @@ Pushes `out/` to the `gh-pages` branch. All favicon/asset hrefs use the hardcode
 
 **WorkExperience component**
 - Date pill and location left-align on small screens: `items-start md:items-end`
+
+### 2026-03-24
+
+**BASE_PATH constant**
+- Extracted `BASE_PATH = '/employment-screener'` as a named export from `next.config.ts`
+- `layout.tsx` and `page.tsx` now import and use it — string lives in one place
+- Pattern: any new asset href that needs the base path prefix should use `` `${BASE_PATH}/...` `` rather than a hardcoded string
